@@ -12,7 +12,7 @@
 <aside id="panel">
   <header>
     <h1>realm.pixels <span>world viewer</span></h1>
-    <nav><a class="on" href="index.html">Viewer</a><a href="catalog.html">Catalog</a></nav>
+    <nav><a class="on" href="index.html">Viewer</a><a href="creatures.html">Creatures</a><a href="catalog.html">Catalog</a></nav>
     <p id="meta" class="meta"></p>
   </header>
 
@@ -50,6 +50,19 @@
     <button id="copy">Copy camera key</button>
   </section>
 
+  <section class="motion">
+    <h2>Motion</h2>
+    <div class="mbtns">
+      <button class="mb" data-m="water">River &amp; falls</button>
+      <button class="mb" data-m="fire">Fire &amp; torches</button>
+      <button class="mb" data-m="sky">Clouds &amp; stars</button>
+      <button class="mb" data-m="dragon">Dragon flight</button>
+      <button class="mb" data-m="hunchback">Hunchback walk</button>
+      <button class="mb" data-m="black hole">Black hole</button>
+      <button class="mb" data-m="all">Everything</button>
+    </div>
+  </section>
+
   <section class="toggles">
     <h2>Show</h2>
     <label><input id="t-vill" type="checkbox" checked> villager homes</label>
@@ -58,7 +71,6 @@
     <label><input id="t-safe" type="checkbox" checked> Instagram safe zones</label>
     <label><input id="t-cover" type="checkbox"> cover crop 3:4</label>
     <label><input id="t-outside" type="checkbox" checked> dim outside the 9:16 frame</label>
-    <label><input id="t-anim" type="checkbox"> animate water, fire, stars</label>
     <label><input id="t-sharp" type="checkbox"> sharp (2× the reel's pixels)</label>
   </section>
 

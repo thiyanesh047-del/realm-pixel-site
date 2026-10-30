@@ -28,7 +28,7 @@ const COMMON = `
 uniform vec2 cam_c; uniform float cam_cs, cam_sn, cam_ca, cam_sa, cam_zoom, cam_D, cam_fy, W, H;
 uniform vec3 AMB, MOON, SPILL, WARM, FOAM, WATERC; uniform float MOON_EL; uniform vec2 moon_dir;
 uniform sampler2D river_d; uniform vec4 glows[8]; uniform float glow_r[8]; uniform int n_glows;
-uniform vec3 fire_pos; uniform float fire_k; uniform float t;
+uniform vec3 fire_pos; uniform float fire_k; uniform float t; uniform float t_fire, t_sky;   // water, fire, sky clocks (Motion buttons)
 uniform float day, wglow, em_k, gk, shade_k; uniform int style;
 uniform sampler2D shadow_map; uniform mat4 light_m; uniform float shadow_bias;
 
@@ -89,12 +89,22 @@ in vec3 position; in vec3 aPos; in vec4 aCol; in vec4 aMisc;
 uniform float q;
 out vec3 v_world; out vec3 v_base; out vec3 v_mid; out vec3 v_col; out float v_ao; out float v_key; flat out int v_flags; out float v_dz;
 ` + COMMON + CORNER + `
+uniform float xf_on, xf_pitch, xf_hz; uniform vec4 xf;            // moving meshes (dragon flight, walkers): pitch, yaw, move
+vec3 xform(vec3 p) {
+    if (xf_on < 0.5) return p;
+    float cp = cos(xf_pitch), sp = sin(xf_pitch);
+    vec3 a = vec3(p.x * cp + (p.z - xf_hz) * sp, p.y, -p.x * sp + (p.z - xf_hz) * cp + xf_hz);
+    float c = cos(xf.w), s = sin(xf.w);
+    return vec3(c * a.x - s * a.y + xf.x, s * a.x + c * a.y + xf.y, a.z + xf.z);
+}
+
 void main() {
     int fl = int(aCol.w + 0.5);
     float size = aMisc.z / 100.0;
-    vec3 base = aPos / q - 64.0;
-    vec3 p = base + corner(fl & 7, position.x, position.y) * size;
-    v_world = p; v_base = base; v_mid = base + 0.5 * size; v_col = aCol.rgb / 255.0; v_ao = aMisc.x / 200.0; v_key = aMisc.y; v_flags = fl;
+    vec3 lb = aPos / q - 64.0;
+    vec3 base = xform(lb);
+    vec3 p = xform(lb + corner(fl & 7, position.x, position.y) * size);
+    v_world = p; v_base = base; v_mid = xform(lb + 0.5 * size); v_col = aCol.rgb / 255.0; v_ao = aMisc.x / 200.0; v_key = aMisc.y; v_flags = fl;
     float dz;
     gl_Position = project(p, dz);
     v_dz = dz;
@@ -125,7 +135,7 @@ void main() {
     }
     vec3 col;
     if (emis) {
-        float flick = 0.9 + 0.1 * sin(t * 13.0 + floor(v_world.x) * 0.7 + floor(v_world.z));
+        float flick = 0.9 + 0.1 * sin(t_fire * 13.0 + floor(v_world.x) * 0.7 + floor(v_world.z));
         float k = f == 0 ? 1.0 : (dot(n.xy, cam_right) < 0.0 ? 0.92 : 0.84);
         col = base * k * flick;
         o_em = vec4(col * em_k, 1.0);
@@ -152,9 +162,17 @@ export const SHADOW_VS = HEAD + `
 in vec3 position; in vec3 aPos; in vec4 aCol; in vec4 aMisc;
 uniform float q; uniform mat4 light_m;
 ` + CORNER + `
+uniform float xf_on, xf_pitch, xf_hz; uniform vec4 xf;            // moving meshes (dragon flight, walkers): pitch, yaw, move
+vec3 xform(vec3 p) {
+    if (xf_on < 0.5) return p;
+    float cp = cos(xf_pitch), sp = sin(xf_pitch);
+    vec3 a = vec3(p.x * cp + (p.z - xf_hz) * sp, p.y, -p.x * sp + (p.z - xf_hz) * cp + xf_hz);
+    float c = cos(xf.w), s = sin(xf.w);
+    return vec3(c * a.x - s * a.y + xf.x, s * a.x + c * a.y + xf.y, a.z + xf.z);
+}
 void main() {
     int fl = int(aCol.w + 0.5);
-    vec3 p = aPos / q - 64.0 + corner(fl & 7, position.x, position.y) * (aMisc.z / 100.0);
+    vec3 p = xform(aPos / q - 64.0 + corner(fl & 7, position.x, position.y) * (aMisc.z / 100.0));
     gl_Position = light_m * vec4(p, 1.0);
 }
 `;
@@ -270,7 +288,7 @@ void main() {
     float band = exp(-pow((uu * 0.42 + vv - 330.0) / 70.0, 2.0));
     float cloud = hash2(floor(uu / 5.0), floor(vv / 5.0), 61u) * 0.6 + hash2(floor(uu / 13.0), floor(vv / 13.0), 62u) * 0.8;
     sky += band * cloud * 0.11 * vec3(0.75, 0.8, 1.0) * k * stars;
-    float cl = vnoise(vec2(uu / 70.0 + t * 0.02, vv / 18.0), 71u) * 0.65 + vnoise(vec2(uu / 24.0, vv / 8.0), 72u) * 0.35;
+    float cl = vnoise(vec2(uu / 70.0 + t_sky * 0.02, vv / 18.0), 71u) * 0.65 + vnoise(vec2(uu / 24.0, vv / 8.0), 72u) * 0.35;
     float cm = smoothstep(0.56, 0.70, cl) * smoothstep(0.04, 0.2, k) * (1.0 - smoothstep(0.5, 0.85, k));
     cm = floor(cm * 4.0 + 0.5) / 4.0;                                 // day clouds, stepped like pixel art
     sky = mix(sky, mix(vec3(0.96, 0.95, 0.92), SKY_LOW * 1.15, 0.25), cm * (1.0 - stars) * 0.85);
@@ -279,7 +297,7 @@ void main() {
     if (stars < 0.5 && sd < 15.0) { sky = vec3(1.0, 0.97, 0.86); em = vec3(0.6, 0.55, 0.4); }
     float h1 = hash2(uu, vv, 41u);
     bool up = k > 0.06 && hash2(uu, vv, 44u) < stars;
-    float tw = 0.65 + 0.35 * sin(t * (2.0 + mod(3.0 * h1 * 100.0, 3.0)) + h1 * 300.0);
+    float tw = 0.65 + 0.35 * sin(t_sky * (2.0 + mod(3.0 * h1 * 100.0, 3.0)) + h1 * 300.0);
     vec3 tint = mod(h1 * 1e4, 1.0) < 0.3 ? vec3(1.0, 0.86, 0.72) : vec3(0.82, 0.9, 1.0);
     if (up && h1 < 0.006 + 0.01 * band) sky = max(sky, tint * 0.42 * tw);
     if (up && h1 < 0.0018) sky = max(sky, tint * 0.85 * tw);
@@ -340,7 +358,7 @@ void main() {
     float dz;
     vec4 cp = project(aAnchor, dz);
     float a = position.x, b = position.y, scale = aInfo.x;
-    bool shown = mod(floor(t * 10.0), aInfo.w) == aInfo.z;
+    bool shown = mod(floor(t_fire * 10.0), aInfo.w) == aInfo.z;
     vec2 off = vec2((a - 0.5) * aRect.z * cam_zoom * scale / (W * 0.5), b * aRect.w * cam_zoom * scale * 2.0 / H);
     gl_Position = shown && dz < cam_D * 0.92 ? cp + vec4(off, 0.0, 0.0) : vec4(2.0, 2.0, 2.0, 1.0);
     gl_Position.z = -(dz + 0.8) / 30000.0 * cp.w;

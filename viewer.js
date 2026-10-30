@@ -50,14 +50,15 @@ await new Promise((r) => setTimeout(r, 0));
 
 // one record per voxel -> one instance per exposed face (as glr.Renderer.face_instances)
 const POP = Array.from({ length: 64 }, (_, i) => [0, 1, 2, 3, 4, 5].reduce((s, b) => s + ((i >> b) & 1), 0));
-function expand(part) {
-  const u16 = new Uint16Array(vbuf, part.offset * REC, part.count * REC / 2);
-  const u8 = new Uint8Array(vbuf, part.offset * REC, part.count * REC);
+function expand(part, buf = vbuf, keep = null) {
+  const u16 = new Uint16Array(buf, part.offset * REC, part.count * REC / 2);
+  const u8 = new Uint8Array(buf, part.offset * REC, part.count * REC);
   let nf = 0;
-  for (let i = 0; i < part.count; i++) nf += POP[u8[i * REC + 9] & 63];
+  for (let i = 0; i < part.count; i++) if (!keep || keep[i]) nf += POP[u8[i * REC + 9] & 63];
   const pos = new Uint16Array(nf * 3), col = new Uint8Array(nf * 4), misc = new Uint8Array(nf * 4);
   let j = 0;
   for (let i = 0; i < part.count; i++) {
+    if (keep && !keep[i]) continue;
     const b = i * REC, fl = u8[b + 9], kind = (u8[b + 10] & 7) << 3, w = i * REC / 2;
     for (let f = 0; f < 6; f++) {
       if (!(fl & (1 << f))) continue;
@@ -69,6 +70,13 @@ function expand(part) {
   }
   return { pos, col, misc, nf };
 }
+
+// moving things for the Motion buttons (export_motion.py): the dragon's flight, the hunchback, the black hole (Day 3)
+let MO = null, mbuf = null;
+try {
+  const r = await fetch(`data/motion/world_day${DAYN}.json`, { cache: 'no-cache' });
+  if (r.ok) { MO = await r.json(); mbuf = await fetchBuf(`data/motion/world_day${DAYN}.bin`, 'motion', progress); }
+} catch (e) { MO = null; }
 
 // ------------------------------------------------------------- renderer and shared uniforms
 const canvas = $('gl');
@@ -140,7 +148,8 @@ const U = {
   day: { value: 0 }, wglow: { value: 1 }, em_k: { value: 1 }, gk: { value: 0.62 }, shade_k: { value: 0.6 }, style: { value: M.style },
   shadow_map: { value: smRT.depthTexture }, light_m: { value: new THREE.Matrix4() }, shadow_bias: { value: 0 },
   cam_right: { value: new THREE.Vector2(1, 0) }, water_speed: { value: L.water_speed }, RY: { value: M.land.RY },
-  q: { value: M.q }, res: { value: 1 },
+  q: { value: M.q }, res: { value: 1 }, t_fire: { value: M.t }, t_sky: { value: M.t },
+  xf_on: { value: 0 }, xf: { value: new THREE.Vector4() }, xf_pitch: { value: 0 }, xf_hz: { value: 0 },
 };
 const raw = (vs, fs, uniforms, extra = {}) => new THREE.RawShaderMaterial({ vertexShader: vs, fragmentShader: fs, uniforms, glslVersion: THREE.GLSL3, side: THREE.DoubleSide, ...extra });
 const sphere = new THREE.Sphere(new THREE.Vector3(400, 400, 0), 1e5);
@@ -151,19 +160,42 @@ const sceneShadow = new THREE.Scene(), sceneMain = new THREE.Scene();
 let nFaces = 0;
 const faceMat = raw(S.FACE_VS, S.FACE_FS, U, { depthFunc: THREE.LessDepth });
 const shadowMat = raw(S.SHADOW_VS, S.SHADOW_FS, U);
-for (const part of M.parts) {
-  const d = expand(part);
+function addFaces(d, fm = faceMat, sm = shadowMat, visible = true) {
   nFaces += d.nf;
   const g = quadCorners();
   g.setAttribute('aPos', new THREE.InstancedBufferAttribute(d.pos, 3));
   g.setAttribute('aCol', new THREE.InstancedBufferAttribute(d.col, 4));
   g.setAttribute('aMisc', new THREE.InstancedBufferAttribute(d.misc, 4));
   g.instanceCount = d.nf;
-  const face = new THREE.Mesh(g, faceMat), shad = new THREE.Mesh(g, shadowMat);
+  const face = new THREE.Mesh(g, fm), shad = new THREE.Mesh(g, sm);
   face.frustumCulled = shad.frustumCulled = false;
   face.renderOrder = 1;
+  face.visible = shad.visible = visible;
   sceneMain.add(face);
   sceneShadow.add(shad);
+  return { face, shad, show(v) { face.visible = shad.visible = v; } };
+}
+const frozen = {};                                   // the reel's still copy of each moving thing (hidden while it moves)
+for (const part of M.parts) {
+  if (!MO || part.name !== 'scene') { addFaces(expand(part)); continue; }
+  const u16 = new Uint16Array(vbuf, part.offset * REC, part.count * REC / 2), u8 = new Uint8Array(vbuf, part.offset * REC, part.count * REC);
+  const rest = new Uint8Array(part.count).fill(1);
+  for (const m of MO.meshes) {
+    const h = m.hide, mask = new Uint8Array(part.count);
+    for (let i = 0; i < part.count; i++) {
+      if (!rest[i] || u8[i * REC + 13] !== h.size) continue;
+      if (h.near && Math.hypot(u16[i * 8] / M.q - 64 - h.near[0], u16[i * 8 + 1] / M.q - 64 - h.near[1]) > h.r) continue;
+      mask[i] = 1; rest[i] = 0;
+    }
+    frozen[m.name] = addFaces(expand(part, vbuf, mask));
+  }
+  addFaces(expand(part, vbuf, rest));
+}
+const moving = {};                                   // per moving thing: its frames and its own transform uniforms
+for (const m of MO ? MO.meshes : []) {
+  const xu = { xf_on: { value: m.local ? 1 : 0 }, xf: { value: new THREE.Vector4() }, xf_pitch: { value: 0 }, xf_hz: { value: 0 } };
+  const fm = raw(S.FACE_VS, S.FACE_FS, { ...U, ...xu }, { depthFunc: THREE.LessDepth }), sm = raw(S.SHADOW_VS, S.SHADOW_FS, { ...U, ...xu });
+  moving[m.name] = { info: m, xu, frames: m.frames.map((f) => addFaces(expand(f, mbuf), fm, sm, false)) };
 }
 
 const quad = new THREE.PlaneGeometry(2, 2);
@@ -336,11 +368,66 @@ function draw() {
   placeLabels(d);
   $('stat').textContent = `${(M.n_voxels / 1e6).toFixed(2)} M voxels · ${(nFaces / 1e6).toFixed(2)} M faces · ${Wpx}×${Hpx} px · ${(performance.now() - tic).toFixed(0)} ms cpu`;
 }
-let tStart = performance.now();
+const motion = { water: false, fire: false, sky: false, dragon: false, hunchback: false, 'black hole': false };
+const since = {};                                    // when each motion was switched on (performance.now ms)
+const held = { water: 0, fire: 0, sky: 0 };          // clock value carried over when a motion is paused
+function dragonPose(el) {
+  // take off from the keep (2.5 s), then loop over the castle and the river, wings beating rib by rib
+  const P = moving.dragon.info.perch, C = MO.castle;
+  const a = el * 0.32, R = 78;
+  const lx = C[0] + R * Math.cos(a) + 10, ly = C[1] + 0.8 * R * Math.sin(a) + 20, lz = 70 + 6 * Math.sin(el * 1.3);
+  const vx = -R * Math.sin(a), vy = 0.8 * R * Math.cos(a);
+  const u = Math.min(1, el / 2.5), e = u * u * (3 - 2 * u);
+  const x = P[0] + (lx - P[0]) * e, y = P[1] + (ly - P[1]) * e, z = P[2] + (lz - P[2]) * e + 10 * Math.sin(Math.PI * u);
+  const yaw = Math.atan2(vy, vx) * e + Math.atan2(ly - P[1], lx - P[0]) * (1 - e);
+  return { x, y, z, yaw, pitch: 0.6 * e };
+}
+function tickMotion(now) {
+  const el = (k) => (now - since[k]) / 1000;
+  view.t = M.t + held.water + (motion.water ? el('water') : 0);
+  U.t_fire.value = M.t + held.fire + (motion.fire ? el('fire') : 0);
+  U.t_sky.value = M.t + held.sky + (motion.sky ? el('sky') : 0);
+  let movers = false;
+  for (const name of ['dragon', 'hunchback', 'black hole']) {
+    const mv = moving[name];
+    if (!mv) continue;
+    const on = motion[name];
+    frozen[name] && frozen[name].show(!on);
+    const n = mv.frames.length, k = on ? Math.floor(el(name) * mv.info.fps) % n : -1;
+    mv.frames.forEach((f, i) => f.show(i === k));
+    if (!on) continue;
+    movers = true;
+    if (name === 'dragon') {
+      const p = dragonPose(el(name));
+      mv.xu.xf.value.set(p.x, p.y, p.z, p.yaw); mv.xu.xf_pitch.value = p.pitch; mv.xu.xf_hz.value = 13.75;
+    } else if (name === 'hunchback') {
+      const s0 = mv.info.start, ph = (el(name) * 0.08) % 2, fwd = ph < 1, d = fwd ? ph : 2 - ph;
+      mv.xu.xf.value.set(s0[0] + 26 * d, s0[1], 0, fwd ? -Math.PI / 2 : Math.PI / 2);
+    }
+  }
+  if (movers) shadowDone = false;                    // moving things cast moving shadows
+}
 function loop() {
-  if (view.animate) { view.t = M.t + (performance.now() - tStart) / 1000; dirty = true; }
+  if (Object.values(motion).some(Boolean)) { tickMotion(performance.now()); dirty = true; }
   if (dirty) { dirty = false; draw(); }
   requestAnimationFrame(loop);
+}
+function setMotion(name, on) {
+  const now = performance.now();
+  if (on === motion[name]) return;
+  if (!on && name in held) held[name] += (now - since[name]) / 1000;
+  motion[name] = on; since[name] = now;
+  tickMotion(now);
+  for (const b of document.querySelectorAll('.mb')) b.classList.toggle('on', b.dataset.m === 'all' ? Object.values(motion).every(Boolean) : !!motion[b.dataset.m]);
+  dirty = true;
+}
+for (const b of document.querySelectorAll('.mb')) {
+  const m = b.dataset.m;
+  if (m !== 'all' && !(m in held) && !moving[m]) { b.disabled = true; b.title = 'Not in this day\'s world'; continue; }
+  b.addEventListener('click', () => {
+    if (m === 'all') { const on = !Object.entries(motion).every(([k, v]) => v || (!(k in held) && !moving[k])); for (const k of Object.keys(motion)) if (k in held || moving[k]) setMotion(k, on); }
+    else setMotion(m, !motion[m]);
+  });
 }
 
 // ------------------------------------------------------------- overlay: frame, safe zones, labels
@@ -496,7 +583,6 @@ envSel.addEventListener('change', () => { view.env = envSel.value; applyEnv(); d
 
 // toggles
 const bindToggle = (id, fn) => { const el = $(id); el.addEventListener('change', () => { fn(el.checked); layoutOverlay(); dirty = true; }); fn(el.checked); };
-bindToggle('t-anim', (v) => { view.animate = v; if (v) tStart = performance.now() - (view.t - M.t) * 1000; });
 bindToggle('t-vill', (v) => { view.labels.villager = v; });
 bindToggle('t-build', (v) => { view.labels.build = v; });
 bindToggle('t-place', (v) => { view.labels.place = v; });

@@ -1,0 +1,240 @@
+{
+ "record": 16,
+ "q": 64.0,
+ "castle": [
+  410.0,
+  320.0
+ ],
+ "structure": [
+  685.0,
+  110.0
+ ],
+ "meshes": [
+  {
+   "name": "dragon",
+   "local": true,
+   "frames": [
+    {
+     "offset": 0,
+     "count": 118700
+    },
+    {
+     "offset": 118700,
+     "count": 119317
+    },
+    {
+     "offset": 238017,
+     "count": 118404
+    },
+    {
+     "offset": 356421,
+     "count": 115998
+    },
+    {
+     "offset": 472419,
+     "count": 113970
+    },
+    {
+     "offset": 586389,
+     "count": 107919
+    },
+    {
+     "offset": 694308,
+     "count": 97857
+    },
+    {
+     "offset": 792165,
+     "count": 92849
+    },
+    {
+     "offset": 885014,
+     "count": 95104
+    },
+    {
+     "offset": 980118,
+     "count": 101759
+    },
+    {
+     "offset": 1081877,
+     "count": 110548
+    },
+    {
+     "offset": 1192425,
+     "count": 117497
+    }
+   ],
+   "fps": 24,
+   "perch": [
+    409.0,
+    315.0,
+    41.0
+   ],
+   "hide": {
+    "size": 18
+   }
+  },
+  {
+   "name": "hunchback",
+   "local": true,
+   "frames": [
+    {
+     "offset": 1309922,
+     "count": 1785
+    },
+    {
+     "offset": 1311707,
+     "count": 1765
+    },
+    {
+     "offset": 1313472,
+     "count": 1776
+    },
+    {
+     "offset": 1315248,
+     "count": 1765
+    },
+    {
+     "offset": 1317013,
+     "count": 1785
+    },
+    {
+     "offset": 1318798,
+     "count": 1782
+    },
+    {
+     "offset": 1320580,
+     "count": 1764
+    },
+    {
+     "offset": 1322344,
+     "count": 1782
+    }
+   ],
+   "fps": 8,
+   "start": [
+    426.4,
+    468.0,
+    0.0
+   ],
+   "hide": {
+    "size": 22,
+    "near": [
+     426.4,
+     468.0
+    ],
+    "r": 4.5
+   }
+  },
+  {
+   "name": "black hole",
+   "local": false,
+   "frames": [
+    {
+     "offset": 1324126,
+     "count": 8985
+    },
+    {
+     "offset": 1333111,
+     "count": 8979
+    },
+    {
+     "offset": 1342090,
+     "count": 8976
+    },
+    {
+     "offset": 1351066,
+     "count": 8978
+    },
+    {
+     "offset": 1360044,
+     "count": 8978
+    },
+    {
+     "offset": 1369022,
+     "count": 8974
+    },
+    {
+     "offset": 1377996,
+     "count": 8968
+    },
+    {
+     "offset": 1386964,
+     "count": 8954
+    },
+    {
+     "offset": 1395918,
+     "count": 8948
+    },
+    {
+     "offset": 1404866,
+     "count": 8943
+    },
+    {
+     "offset": 1413809,
+     "count": 8942
+    },
+    {
+     "offset": 1422751,
+     "count": 8951
+    },
+    {
+     "offset": 1431702,
+     "count": 8965
+    },
+    {
+     "offset": 1440667,
+     "count": 8963
+    },
+    {
+     "offset": 1449630,
+     "count": 8957
+    },
+    {
+     "offset": 1458587,
+     "count": 8963
+    },
+    {
+     "offset": 1467550,
+     "count": 8961
+    },
+    {
+     "offset": 1476511,
+     "count": 8952
+    },
+    {
+     "offset": 1485463,
+     "count": 8954
+    },
+    {
+     "offset": 1494417,
+     "count": 8978
+    },
+    {
+     "offset": 1503395,
+     "count": 8990
+    },
+    {
+     "offset": 1512385,
+     "count": 8988
+    },
+    {
+     "offset": 1521373,
+     "count": 8990
+    },
+    {
+     "offset": 1530363,
+     "count": 8974
+    }
+   ],
+   "fps": 12,
+   "hide": {
+    "size": 25,
+    "near": [
+     636.6,
+     464.0
+    ],
+    "r": 11
+   }
+  }
+ ]
+}

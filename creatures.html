@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Realm Creatures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="catalog creatures">
+<header class="cat-head">
+  <div class="in">
+    <h1>realm.pixels <span>creatures</span></h1>
+    <nav class="tabs">
+      <a href="index.html">Viewer</a>
+      <a class="on" href="creatures.html">Creatures</a>
+      <a href="catalog.html">Catalog</a>
+    </nav>
+  </div>
+</header>
+<main class="crit">
+  <nav class="crit-list" id="list" aria-label="Creatures"></nav>
+  <section class="crit-screen">
+    <div class="crit-title"><h2 class="page" id="c-name">Loading…</h2><p class="lede" id="c-who"></p></div>
+    <div class="crit-stage" id="stage"><canvas id="gl"></canvas><p class="crit-hint">Drag to turn · wheel or pinch to zoom</p></div>
+    <div class="crit-controls">
+      <div class="mbtns" id="motions" aria-label="Motions"></div>
+      <div class="crit-row">
+        <button id="play" class="mb on">Pause</button>
+        <button id="spin" class="mb">Turntable</button>
+        <label class="crit-speed">speed <input id="speed" type="range" min="0.25" max="2" step="0.05" value="1"></label>
+        <span id="c-stat" class="meta"></span>
+      </div>
+    </div>
+  </section>
+</main>
+<script type="module" src="creatures.js"></script>
+</body>
+</html>
