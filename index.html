@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Realm Viewer</title>
+<title>Realm Builder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -15,6 +15,26 @@
     <nav><a class="on" href="index.html">Viewer</a><a href="creatures.html">Creatures</a><a href="catalog.html">Catalog</a></nav>
     <p id="meta" class="meta"></p>
   </header>
+
+  <section id="game">
+    <h2>Build <small>(the game)</small></h2>
+    <div id="g-tools" class="tools" role="toolbar" aria-label="Tools"></div>
+    <label data-for="mine" class="inline">Pickaxe <input id="g-brush" type="range" min="1" max="6" step="1" value="1"> <span id="g-brush-n">1 block</span></label>
+    <div data-for="block" class="g-opts">
+      <label class="inline">Block size <select id="g-bsize"><option value="1">1 (world)</option><option value="0.5">0.5 (houses)</option><option value="0.25">0.25 (detail)</option></select></label>
+      <label class="inline">Colour <input id="g-color" type="color" value="#b4aa9a"></label>
+      <div id="g-swatches" class="swatches"></div>
+      <p class="meta">Alt-click a block to copy its colour.</p>
+    </div>
+    <div data-for="stamp" class="g-opts">
+      <select id="g-prefab" aria-label="What to stamp"></select>
+      <button id="g-rot" class="ghost">Turn (X) · 0°</button>
+    </div>
+    <p id="g-hover" class="meta"></p>
+    <div class="g-row"><button id="g-undo" class="ghost">Undo</button><button id="g-save">Save to world</button><button id="g-clear" class="ghost">Clear all</button></div>
+    <p id="g-status" class="meta"></p>
+    <p class="meta">Click to use the tool; drag still turns the camera. Keys 1–5 tools, X turn a stamp, [ ] pickaxe size, Ctrl+Z undo, Ctrl+S save.</p>
+  </section>
 
   <section>
     <h2>World</h2>
@@ -95,7 +115,7 @@
   <button id="panel-toggle" title="Show or hide the panel">☰</button>
   <div id="loading"><div class="box"><p id="load-text">Loading…</p><div class="track"><div id="load-bar"></div></div></div></div>
 </main>
-<script type="module" src="viewer.js"></script>
+<script type="module" src="game.js"></script>
 <script>
   window.addEventListener('error', (e) => {
     const t = document.getElementById('load-text');

@@ -1,9 +1,10 @@
 {
- "generated": "2026-10-29T23:30:44",
+ "generated": "2026-10-30T18:48:36",
  "day": 2,
  "source": "day2",
  "t": 60.0,
  "world": 800,
+ "interior": false,
  "C": [
   400.0,
   400.0
@@ -397,14 +398,14 @@
    "persp": 1.0
   },
   {
-   "label": "CANON \u00b7 Day 2 last camera",
+   "label": "CANON \u00b7 Day 3 last camera",
    "t": 0.0,
-   "orbit": -44.0,
-   "zoom": 1.4,
-   "tilt": 68.0,
-   "cx": 330.0,
-   "cy": 360.0,
-   "fy": 0.62,
+   "orbit": 50.0,
+   "zoom": 1.6,
+   "tilt": 66.0,
+   "cx": 615.0,
+   "cy": 185.0,
+   "fy": 0.6,
    "ease": "sine",
    "persp": 1.0
   }
@@ -1425,6 +1426,468 @@
    ]
   },
   {
+   "id": "v-drizzer84",
+   "kind": "villager",
+   "text": "@drizzer84",
+   "sub": "home",
+   "pos": [
+    372.0,
+    451.0,
+    27.0
+   ]
+  },
+  {
+   "id": "v-themetalkiddo2",
+   "kind": "villager",
+   "text": "@themetalkiddo2",
+   "sub": "basement house with a cellar hatch",
+   "pos": [
+    399.0,
+    451.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-lyneys-top-hat4",
+   "kind": "villager",
+   "text": "@lyneys_top_hat4",
+   "sub": "home",
+   "pos": [
+    385.5,
+    451.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-ducktrillion",
+   "kind": "villager",
+   "text": "@ducktrillion",
+   "sub": "home",
+   "pos": [
+    412.5,
+    451.0,
+    24.0
+   ]
+  },
+  {
+   "id": "v-halfsandhalfwich",
+   "kind": "villager",
+   "text": "@halfsandhalfwich",
+   "sub": "home",
+   "pos": [
+    426.0,
+    451.0,
+    23.0
+   ]
+  },
+  {
+   "id": "v-brody-batesole",
+   "kind": "villager",
+   "text": "@brody.batesole",
+   "sub": "home",
+   "pos": [
+    439.5,
+    451.0,
+    24.0
+   ]
+  },
+  {
+   "id": "v-just-t4te",
+   "kind": "villager",
+   "text": "@just_t4te",
+   "sub": "the castle",
+   "pos": [
+    394.0,
+    337.0,
+    68.0
+   ]
+  },
+  {
+   "id": "v-austin-mash",
+   "kind": "villager",
+   "text": "@austin__mash",
+   "sub": "home",
+   "pos": [
+    466.5,
+    451.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-xiko-martinez",
+   "kind": "villager",
+   "text": "@xiko_martinez",
+   "sub": "home",
+   "pos": [
+    480.0,
+    451.0,
+    19.0
+   ]
+  },
+  {
+   "id": "v-darrellrasor42",
+   "kind": "villager",
+   "text": "@darrellrasor42",
+   "sub": "home",
+   "pos": [
+    493.5,
+    451.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-hudsonryder",
+   "kind": "villager",
+   "text": "@hudsonryder_",
+   "sub": "fishing hut",
+   "pos": [
+    354.0,
+    387.0,
+    19.0
+   ]
+  },
+  {
+   "id": "v-q-saliaz",
+   "kind": "villager",
+   "text": "@q_saliaz",
+   "sub": "home",
+   "pos": [
+    520.5,
+    451.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-sam-ackerson",
+   "kind": "villager",
+   "text": "@sam.ackerson",
+   "sub": "home",
+   "pos": [
+    534.0,
+    451.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-javiair12345",
+   "kind": "villager",
+   "text": "@javiair12345",
+   "sub": "home",
+   "pos": [
+    547.5,
+    451.0,
+    24.0
+   ]
+  },
+  {
+   "id": "v-skankestlizard",
+   "kind": "villager",
+   "text": "@skankestlizard",
+   "sub": "home",
+   "pos": [
+    574.5,
+    451.0,
+    5.0
+   ]
+  },
+  {
+   "id": "v-carlossgarciaah",
+   "kind": "villager",
+   "text": "@carlossgarciaah",
+   "sub": "no house: wanders the new street",
+   "pos": [
+    426.0,
+    468.0,
+    27.0
+   ]
+  },
+  {
+   "id": "v-kaiden-forsythe",
+   "kind": "villager",
+   "text": "@kaiden.forsythe",
+   "sub": "home",
+   "pos": [
+    588.0,
+    451.0,
+    19.0
+   ]
+  },
+  {
+   "id": "v-gulalireng",
+   "kind": "villager",
+   "text": "@gulalireng",
+   "sub": "the crypt",
+   "pos": [
+    453.0,
+    451.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-tg-jhonlloyd",
+   "kind": "villager",
+   "text": "@tg.jhonlloyd",
+   "sub": "home",
+   "pos": [
+    601.5,
+    451.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-michi-gellrich",
+   "kind": "villager",
+   "text": "@michi_gellrich",
+   "sub": "the forge (blacksmith)",
+   "pos": [
+    507.0,
+    451.0,
+    27.0
+   ]
+  },
+  {
+   "id": "v-natesucksfr",
+   "kind": "villager",
+   "text": "@natesucksfr",
+   "sub": "home",
+   "pos": [
+    615.0,
+    451.0,
+    27.0
+   ]
+  },
+  {
+   "id": "v-pheonix-preston",
+   "kind": "villager",
+   "text": "@pheonix_preston",
+   "sub": "home",
+   "pos": [
+    372.0,
+    477.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-vinicius-lima448",
+   "kind": "villager",
+   "text": "@vinicius_lima448",
+   "sub": "home",
+   "pos": [
+    385.5,
+    477.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-aaron-chu77",
+   "kind": "villager",
+   "text": "@aaron_chu77",
+   "sub": "home",
+   "pos": [
+    399.0,
+    477.0,
+    27.0
+   ]
+  },
+  {
+   "id": "v-kacevasari",
+   "kind": "villager",
+   "text": "@kacevasari",
+   "sub": "home",
+   "pos": [
+    412.5,
+    477.0,
+    27.0
+   ]
+  },
+  {
+   "id": "v-a-mram0s",
+   "kind": "villager",
+   "text": "@a.mram0s",
+   "sub": "home",
+   "pos": [
+    426.0,
+    477.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-jacobbudsan",
+   "kind": "villager",
+   "text": "@jacobbudsan_",
+   "sub": "home",
+   "pos": [
+    439.5,
+    477.0,
+    25.0
+   ]
+  },
+  {
+   "id": "v-the-erikrdz",
+   "kind": "villager",
+   "text": "@the.erikrdz",
+   "sub": "home",
+   "pos": [
+    453.0,
+    477.0,
+    25.0
+   ]
+  },
+  {
+   "id": "v-abdu-llah02058",
+   "kind": "villager",
+   "text": "@abdu.llah02058",
+   "sub": "the restaurant",
+   "pos": [
+    561.0,
+    451.0,
+    10.0
+   ]
+  },
+  {
+   "id": "v-dnshaqill",
+   "kind": "villager",
+   "text": "@dnshaqill",
+   "sub": "home",
+   "pos": [
+    466.5,
+    477.0,
+    27.0
+   ]
+  },
+  {
+   "id": "v-rayquazar9",
+   "kind": "villager",
+   "text": "@rayquazar9",
+   "sub": "home",
+   "pos": [
+    480.0,
+    477.0,
+    24.0
+   ]
+  },
+  {
+   "id": "v-z-boib",
+   "kind": "villager",
+   "text": "@z.boib",
+   "sub": "home",
+   "pos": [
+    493.5,
+    477.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-72ndjaden",
+   "kind": "villager",
+   "text": "@72ndjaden",
+   "sub": "home",
+   "pos": [
+    507.0,
+    477.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-huntman225",
+   "kind": "villager",
+   "text": "@huntman225",
+   "sub": "wizard tower with a mini black hole",
+   "pos": [
+    636.6,
+    464.0,
+    30.0
+   ]
+  },
+  {
+   "id": "v-good-kind-friend",
+   "kind": "villager",
+   "text": "@good_kind_friend",
+   "sub": "home",
+   "pos": [
+    520.5,
+    477.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-maloyowen",
+   "kind": "villager",
+   "text": "@maloyowen",
+   "sub": "home",
+   "pos": [
+    534.0,
+    477.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-dinh-asia-home",
+   "kind": "villager",
+   "text": "@dinh_asia_home",
+   "sub": "home",
+   "pos": [
+    547.5,
+    477.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-seth-h0lt",
+   "kind": "villager",
+   "text": "@seth.h0lt",
+   "sub": "home",
+   "pos": [
+    561.0,
+    477.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-samm-knightt",
+   "kind": "villager",
+   "text": "@samm.knightt",
+   "sub": "home",
+   "pos": [
+    574.5,
+    477.0,
+    20.0
+   ]
+  },
+  {
+   "id": "v-silyano5335",
+   "kind": "villager",
+   "text": "@silyano5335",
+   "sub": "home",
+   "pos": [
+    588.0,
+    477.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-a-hum-phreys",
+   "kind": "villager",
+   "text": "@a_hum_phreys",
+   "sub": "home",
+   "pos": [
+    601.5,
+    477.0,
+    21.0
+   ]
+  },
+  {
+   "id": "v-kin-t-s",
+   "kind": "villager",
+   "text": "@kin_t_s",
+   "sub": "home",
+   "pos": [
+    615.0,
+    477.0,
+    24.0
+   ]
+  },
+  {
    "id": "b-tent-woodpile-fire-pit",
    "kind": "build",
    "text": "tent, woodpile, fire pit",
@@ -1502,6 +1965,138 @@
    ]
   },
   {
+   "id": "b-structure-moved",
+   "kind": "build",
+   "text": "structure moved",
+   "sub": "unexplained; a hooded figure seen on its tower",
+   "pos": [
+    685.0,
+    110.0,
+    27.0
+   ]
+  },
+  {
+   "id": "b-hd-scary-dragon",
+   "kind": "build",
+   "text": "HD scary dragon",
+   "sub": "\u2014",
+   "pos": [
+    412.0,
+    317.0,
+    62.0
+   ]
+  },
+  {
+   "id": "b-tiki-lagoon",
+   "kind": "build",
+   "text": "tiki lagoon",
+   "sub": "wish of @darrellrasor42 (7\u2665)",
+   "pos": [
+    210.0,
+    360.0,
+    -13.0
+   ]
+  },
+  {
+   "id": "b-new-street",
+   "kind": "build",
+   "text": "new street",
+   "sub": "Day 3 followers",
+   "pos": [
+    372.0,
+    464.0,
+    27.0
+   ]
+  },
+  {
+   "id": "b-forge",
+   "kind": "build",
+   "text": "forge",
+   "sub": "wish of @michi_gellrich",
+   "pos": [
+    507.0,
+    451.0,
+    27.0
+   ]
+  },
+  {
+   "id": "b-restaurant",
+   "kind": "build",
+   "text": "restaurant",
+   "sub": "wish of @abdu.llah02058",
+   "pos": [
+    561.0,
+    451.0,
+    10.0
+   ]
+  },
+  {
+   "id": "b-basement-house-with-a-cellar-hatch",
+   "kind": "build",
+   "text": "basement house with a cellar hatch",
+   "sub": "wish of @themetalkiddo2",
+   "pos": [
+    399.0,
+    451.0,
+    30.0
+   ]
+  },
+  {
+   "id": "b-crypt",
+   "kind": "build",
+   "text": "crypt",
+   "sub": "for @gulalireng",
+   "pos": [
+    453.0,
+    451.0,
+    21.0
+   ]
+  },
+  {
+   "id": "b-wizard-tower-with-a-mini-black-hole",
+   "kind": "build",
+   "text": "wizard tower with a mini black hole",
+   "sub": "wish of @huntman225",
+   "pos": [
+    637.0,
+    464.0,
+    30.0
+   ]
+  },
+  {
+   "id": "b-fishing-hut-dock-and-boat",
+   "kind": "build",
+   "text": "fishing hut, dock and boat",
+   "sub": "wish of @hudsonryder_ with @maloyowen",
+   "pos": [
+    354.0,
+    387.0,
+    19.0
+   ]
+  },
+  {
+   "id": "b-stone-bridge",
+   "kind": "build",
+   "text": "stone bridge",
+   "sub": "the castle had no way across",
+   "pos": [
+    402.0,
+    393.07,
+    5.0
+   ]
+  },
+  {
+   "id": "b-gatehouse-for-the-knight",
+   "kind": "build",
+   "text": "gatehouse  for the knight",
+   "sub": "@just_t4te no longer lives in @liprontea's castle",
+   "pos": [
+    384.0,
+    346.0,
+    18.0
+   ]
+  },
+  {
    "id": "p-the-camp",
    "kind": "place",
    "text": "The camp",
@@ -1551,9 +2146,9 @@
    "text": "The giant structure",
    "sub": "",
    "pos": [
-    565.0,
-    292.0,
-    118.0
+    685.0,
+    110.0,
+    27.0
    ]
   },
   {
@@ -1653,6 +2248,72 @@
     368.0,
     396.0,
     6.0
+   ]
+  },
+  {
+   "id": "p-the-new-street",
+   "kind": "place",
+   "text": "The new street",
+   "sub": "",
+   "pos": [
+    504.0,
+    464.0,
+    30.0
+   ]
+  },
+  {
+   "id": "p-fishing-dock",
+   "kind": "place",
+   "text": "Fishing dock",
+   "sub": "",
+   "pos": [
+    356.0,
+    380.0,
+    16.0
+   ]
+  },
+  {
+   "id": "p-farm-planned-day-3-part-2",
+   "kind": "place",
+   "text": "Farm (planned, Day 3 \u00b7 Part 2)",
+   "sub": "",
+   "pos": [
+    400.0,
+    532.0,
+    21.0
+   ]
+  },
+  {
+   "id": "p-west-street-planned-day-3-part-2",
+   "kind": "place",
+   "text": "West street (planned, Day 3 \u00b7 Part 2)",
+   "sub": "",
+   "pos": [
+    318.0,
+    464.0,
+    30.0
+   ]
+  },
+  {
+   "id": "p-horse-stable-planned-day-3-part-2",
+   "kind": "place",
+   "text": "Horse stable (planned, Day 3 \u00b7 Part 2)",
+   "sub": "",
+   "pos": [
+    368.0,
+    396.0,
+    6.0
+   ]
+  },
+  {
+   "id": "p-alchemist-s-lab-planned-day-3-part-2",
+   "kind": "place",
+   "text": "Alchemist's lab (planned, Day 3 \u00b7 Part 2)",
+   "sub": "",
+   "pos": [
+    648.0,
+    464.0,
+    30.0
    ]
   }
  ]

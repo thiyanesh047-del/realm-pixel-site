@@ -1,0 +1,2004 @@
+{
+ "generated": "2026-10-30T18:49:13",
+ "day": 4,
+ "source": "day4",
+ "t": 42.5,
+ "world": 800,
+ "interior": false,
+ "C": [
+  400.0,
+  400.0
+ ],
+ "W": 540,
+ "H": 960,
+ "q": 64.0,
+ "n_voxels": 2067393,
+ "parts": [
+  {
+   "name": "world",
+   "offset": 0,
+   "count": 1661340
+  },
+  {
+   "name": "scene",
+   "offset": 1661340,
+   "count": 406053
+  }
+ ],
+ "style": 1,
+ "animate_water": false,
+ "title": "Day 3 \u00b7 Part 2 \u2014 \"The gold rumour\" (director's treatment, draft 1)",
+ "light": {
+  "SPILL": [
+   0.22,
+   0.95,
+   0.88
+  ],
+  "WARM": [
+   1.0,
+   0.58,
+   0.24
+  ],
+  "FOAM": [
+   0.86,
+   1.0,
+   0.97
+  ],
+  "WATER": [
+   0.18,
+   0.8,
+   0.76
+  ],
+  "MOON_AZ": 2.705260340591211,
+  "fire": 1.6,
+  "FIRE": [
+   404.0,
+   402.0
+  ],
+  "glows": [
+   [
+    242.3229217529297,
+    354.9831848144531,
+    -17.0,
+    18.0,
+    1.0
+   ]
+  ],
+  "crack_k": 0.0,
+  "scar_k": 1.0,
+  "sun_px": [
+   406.2,
+   480.0
+  ],
+  "sprite_k": [
+   0.86407,
+   0.80242,
+   0.79201
+  ],
+  "haze": [
+   0.10196,
+   0.11765,
+   0.21961
+  ],
+  "water_speed": 1.1,
+  "low_fall_r": 16.0,
+  "fall_foot": [
+   241.3229217529297,
+   354.9831848144531
+  ],
+  "post_day3": true
+ },
+ "env": {
+  "amb": [
+   0.15,
+   0.21,
+   0.31
+  ],
+  "sun": [
+   0.528,
+   0.608,
+   0.752
+  ],
+  "el": 0.73304,
+  "sky_low": [
+   0.05,
+   0.11,
+   0.21
+  ],
+  "sky_top": [
+   0.0,
+   0.0,
+   0.13
+  ],
+  "bg": [
+   0.0,
+   0.0,
+   0.14118
+  ],
+  "fog": [
+   0.05,
+   0.11,
+   0.21
+  ],
+  "wglow": 1.0,
+  "em_k": 1.0,
+  "gk": 0.62,
+  "shade_k": 0.6,
+  "stars": 1.0
+ },
+ "envs": {
+  "night": {
+   "amb": [
+    0.15,
+    0.21,
+    0.31
+   ],
+   "sun": [
+    0.528,
+    0.608,
+    0.752
+   ],
+   "el": 0.73304,
+   "sky_low": [
+    0.05,
+    0.11,
+    0.21
+   ],
+   "sky_top": [
+    0.0,
+    0.0,
+    0.13
+   ],
+   "bg": [
+    0.0,
+    0.0,
+    0.14118
+   ],
+   "fog": [
+    0.05,
+    0.11,
+    0.21
+   ],
+   "wglow": 1.0,
+   "em_k": 1.0,
+   "gk": 0.62,
+   "shade_k": 0.6,
+   "stars": 1.0
+  }
+ },
+ "env_is_day": false,
+ "shadow": {
+  "res": 4096,
+  "light_m": [
+   -0.0008,
+   0.00139,
+   0.00144,
+   0.0,
+   -0.0017,
+   -0.00065,
+   -0.00067,
+   0.0,
+   0.0,
+   0.0017,
+   -0.00143,
+   0.0,
+   1.0,
+   -0.3809,
+   -0.23541,
+   1.0
+  ],
+  "bias": 0.0016003833963800847
+ },
+ "land": {
+  "CLIFF_X0": 250.0,
+  "LOW": 34.0,
+  "RX": 245.3229217529297,
+  "RY": 354.9831848144531
+ },
+ "shots": [
+  {
+   "label": "Day 4 \u00b7 0.0 s",
+   "t": 0.0,
+   "orbit": 50,
+   "zoom": 1.6,
+   "cx": 615.0,
+   "cy": 185.0,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 66,
+   "persp": 1.0
+  },
+  {
+   "label": "Day 4 \u00b7 3.0 s",
+   "t": 2.999,
+   "orbit": 40,
+   "zoom": 4.8,
+   "cx": 680.0,
+   "cy": 148.0,
+   "fy": 0.7,
+   "ease": "expo",
+   "tilt": 62,
+   "persp": 0.8
+  },
+  {
+   "label": "Day 4 \u00b7 3.0 s",
+   "t": 3.0,
+   "orbit": 30,
+   "zoom": 7.0,
+   "cx": 673.01,
+   "cy": 165.0,
+   "fy": 0.55,
+   "ease": null,
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 4.6 s",
+   "t": 4.598999999999999,
+   "orbit": 26,
+   "zoom": 7.0,
+   "cx": 682.9,
+   "cy": 289.92,
+   "fy": 0.55,
+   "ease": "linear",
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 4.6 s",
+   "t": 4.6,
+   "orbit": 0,
+   "zoom": 5.5,
+   "cx": 412.0,
+   "cy": 348.0,
+   "fy": 0.8,
+   "ease": null,
+   "tilt": 58,
+   "persp": 0.15
+  },
+  {
+   "label": "Day 4 \u00b7 6.6 s",
+   "t": 6.598999999999999,
+   "orbit": 4,
+   "zoom": 6.2,
+   "cx": 412.0,
+   "cy": 342.0,
+   "fy": 0.84,
+   "ease": "sine",
+   "tilt": 58,
+   "persp": 0.15
+  },
+  {
+   "label": "Day 4 \u00b7 6.6 s",
+   "t": 6.6,
+   "orbit": 150,
+   "zoom": 12.0,
+   "cx": 356.0,
+   "cy": 379.0,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 57,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 9.5 s",
+   "t": 9.499,
+   "orbit": 146,
+   "zoom": 14.0,
+   "cx": 356.0,
+   "cy": 378.0,
+   "fy": 0.62,
+   "ease": "sine",
+   "tilt": 57,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 9.5 s",
+   "t": 9.5,
+   "orbit": 270,
+   "zoom": 7.7,
+   "cx": 350.0,
+   "cy": 464.0,
+   "fy": 0.5,
+   "ease": null,
+   "tilt": 64,
+   "persp": 1.0
+  },
+  {
+   "label": "Day 4 \u00b7 11.3 s",
+   "t": 11.299000000000001,
+   "orbit": 270,
+   "zoom": 7.7,
+   "cx": 288.0,
+   "cy": 464.0,
+   "fy": 0.5,
+   "ease": "sine",
+   "tilt": 64,
+   "persp": 1.0
+  },
+  {
+   "label": "Day 4 \u00b7 11.3 s",
+   "t": 11.3,
+   "orbit": 227,
+   "zoom": 10.9375,
+   "cx": 351.76,
+   "cy": 513.9,
+   "fy": 0.34,
+   "ease": null,
+   "tilt": 82,
+   "persp": 1.0
+  },
+  {
+   "label": "Day 4 \u00b7 12.9 s",
+   "t": 12.899000000000001,
+   "orbit": 231,
+   "zoom": 10.9375,
+   "cx": 349.57,
+   "cy": 515.95,
+   "fy": 0.34,
+   "ease": "sine",
+   "tilt": 82,
+   "persp": 1.0
+  },
+  {
+   "label": "Day 4 \u00b7 12.9 s",
+   "t": 12.9,
+   "orbit": 30,
+   "zoom": 10.5,
+   "cx": 381.0,
+   "cy": 401.0,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 14.6 s",
+   "t": 14.599,
+   "orbit": 34,
+   "zoom": 11.5,
+   "cx": 380.0,
+   "cy": 401.0,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 14.6 s",
+   "t": 14.6,
+   "orbit": 20,
+   "zoom": 13.0,
+   "cx": 358.9,
+   "cy": 458.8,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 16.1 s",
+   "t": 16.099,
+   "orbit": 23,
+   "zoom": 14.0,
+   "cx": 358.9,
+   "cy": 458.8,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 16.1 s",
+   "t": 16.1,
+   "orbit": -14,
+   "zoom": 13.0,
+   "cx": 357.8,
+   "cy": 464.5,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 17.6 s",
+   "t": 17.599,
+   "orbit": -11,
+   "zoom": 14.0,
+   "cx": 357.8,
+   "cy": 464.5,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 17.6 s",
+   "t": 17.6,
+   "orbit": 20,
+   "zoom": 13.0,
+   "cx": 560.6,
+   "cy": 458.5,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 19.0 s",
+   "t": 18.999,
+   "orbit": 23,
+   "zoom": 14.0,
+   "cx": 560.6,
+   "cy": 458.5,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 19.0 s",
+   "t": 19.0,
+   "orbit": -14,
+   "zoom": 13.0,
+   "cx": 506.6,
+   "cy": 458.5,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 20.6 s",
+   "t": 20.599,
+   "orbit": -11,
+   "zoom": 14.0,
+   "cx": 506.6,
+   "cy": 458.5,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 20.6 s",
+   "t": 20.6,
+   "orbit": 20,
+   "zoom": 13.0,
+   "cx": 395.6,
+   "cy": 337.8,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 22.4 s",
+   "t": 22.398999999999997,
+   "orbit": 23,
+   "zoom": 14.0,
+   "cx": 395.6,
+   "cy": 337.8,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 22.4 s",
+   "t": 22.4,
+   "orbit": 10,
+   "zoom": 2.0,
+   "cx": 500.0,
+   "cy": 464.0,
+   "fy": 0.55,
+   "ease": null,
+   "tilt": 60,
+   "persp": 1.0
+  },
+  {
+   "label": "Day 4 \u00b7 24.0 s",
+   "t": 23.999,
+   "orbit": 14,
+   "zoom": 2.1,
+   "cx": 500.0,
+   "cy": 460.0,
+   "fy": 0.55,
+   "ease": "sine",
+   "tilt": 60,
+   "persp": 1.0
+  },
+  {
+   "label": "Day 4 \u00b7 24.0 s",
+   "t": 24.0,
+   "orbit": 26,
+   "zoom": 11.0,
+   "cx": 402.6,
+   "cy": 461.2,
+   "fy": 0.58,
+   "ease": null,
+   "tilt": 57,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 25.2 s",
+   "t": 25.198999999999998,
+   "orbit": 26,
+   "zoom": 11.4,
+   "cx": 402.6,
+   "cy": 461.2,
+   "fy": 0.58,
+   "ease": "sine",
+   "tilt": 57,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 25.2 s",
+   "t": 25.2,
+   "orbit": 40,
+   "zoom": 16.0,
+   "cx": 406.0,
+   "cy": 339.5,
+   "fy": 0.7,
+   "ease": null,
+   "tilt": 58,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 25.9 s",
+   "t": 25.898999999999997,
+   "orbit": 40,
+   "zoom": 16.5,
+   "cx": 406.0,
+   "cy": 339.5,
+   "fy": 0.7,
+   "ease": "sine",
+   "tilt": 58,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 25.9 s",
+   "t": 25.9,
+   "orbit": 30,
+   "zoom": 12.0,
+   "cx": 402.6,
+   "cy": 461.2,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 57,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 27.0 s",
+   "t": 26.999,
+   "orbit": 30,
+   "zoom": 12.4,
+   "cx": 402.6,
+   "cy": 461.2,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 57,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 27.0 s",
+   "t": 27.0,
+   "orbit": 26,
+   "zoom": 12.0,
+   "cx": 652.3,
+   "cy": 466.2,
+   "fy": 0.55,
+   "ease": null,
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 28.2 s",
+   "t": 28.198999999999998,
+   "orbit": 22,
+   "zoom": 6.5,
+   "cx": 636.6,
+   "cy": 464.0,
+   "fy": 0.93,
+   "ease": "cubic",
+   "tilt": 55,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 28.2 s",
+   "t": 28.2,
+   "orbit": 150,
+   "zoom": 7.0,
+   "cx": 352.0,
+   "cy": 382.0,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 31.0 s",
+   "t": 30.999,
+   "orbit": 146,
+   "zoom": 8.0,
+   "cx": 353.0,
+   "cy": 382.0,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 56,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 31.0 s",
+   "t": 31.0,
+   "orbit": 40,
+   "zoom": 1.7,
+   "cx": 540.0,
+   "cy": 280.0,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 64,
+   "persp": 1.0
+  },
+  {
+   "label": "Day 4 \u00b7 33.6 s",
+   "t": 33.599000000000004,
+   "orbit": 44,
+   "zoom": 1.9,
+   "cx": 590.0,
+   "cy": 230.0,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 64,
+   "persp": 1.0
+  },
+  {
+   "label": "Day 4 \u00b7 33.6 s",
+   "t": 33.6,
+   "orbit": 20,
+   "zoom": 6.0,
+   "cx": 670.0,
+   "cy": 182.0,
+   "fy": 0.64,
+   "ease": null,
+   "tilt": 60,
+   "persp": 0.6
+  },
+  {
+   "label": "Day 4 \u00b7 35.6 s",
+   "t": 35.599000000000004,
+   "orbit": 22,
+   "zoom": 6.6,
+   "cx": 670.0,
+   "cy": 180.0,
+   "fy": 0.64,
+   "ease": "sine",
+   "tilt": 60,
+   "persp": 0.6
+  },
+  {
+   "label": "Day 4 \u00b7 35.6 s",
+   "t": 35.6,
+   "orbit": 40,
+   "zoom": 6.0,
+   "cx": 677.5,
+   "cy": 121.5,
+   "fy": 0.86,
+   "ease": null,
+   "tilt": 62,
+   "persp": 0.5
+  },
+  {
+   "label": "Day 4 \u00b7 36.6 s",
+   "t": 36.599000000000004,
+   "orbit": 42,
+   "zoom": 5.0,
+   "cx": 677.5,
+   "cy": 131.5,
+   "fy": 0.7,
+   "ease": "sine",
+   "tilt": 62,
+   "persp": 0.5
+  },
+  {
+   "label": "Day 4 \u00b7 36.6 s",
+   "t": 36.6,
+   "orbit": 30,
+   "zoom": 15.0,
+   "cx": 672.5,
+   "cy": 190.0,
+   "fy": 0.6,
+   "ease": null,
+   "tilt": 58,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 37.0 s",
+   "t": 36.999,
+   "orbit": 30,
+   "zoom": 15.5,
+   "cx": 672.5,
+   "cy": 190.0,
+   "fy": 0.6,
+   "ease": "sine",
+   "tilt": 58,
+   "persp": 0.0
+  },
+  {
+   "label": "Day 4 \u00b7 37.0 s",
+   "t": 37.0,
+   "orbit": 34,
+   "zoom": 5.0,
+   "cx": 412.0,
+   "cy": 320.0,
+   "fy": 0.86,
+   "ease": null,
+   "tilt": 58,
+   "persp": 0.2
+  },
+  {
+   "label": "Day 4 \u00b7 39.4 s",
+   "t": 39.399,
+   "orbit": 40,
+   "zoom": 2.6,
+   "cx": 450.0,
+   "cy": 280.0,
+   "fy": 0.95,
+   "ease": "cubic",
+   "tilt": 58,
+   "persp": 0.5
+  },
+  {
+   "label": "Day 4 \u00b7 39.4 s",
+   "t": 39.4,
+   "orbit": 40,
+   "zoom": 2.6,
+   "cx": 450.0,
+   "cy": 280.0,
+   "fy": 0.95,
+   "ease": null,
+   "tilt": 58,
+   "persp": 0.5
+  },
+  {
+   "label": "Day 4 \u00b7 42.5 s",
+   "t": 42.5,
+   "orbit": 50,
+   "zoom": 1.6,
+   "cx": 615.0,
+   "cy": 185.0,
+   "fy": 0.6,
+   "ease": "cubic",
+   "tilt": 66,
+   "persp": 1.0
+  },
+  {
+   "label": "CANON \u00b7 Day 3 last camera",
+   "t": 0.0,
+   "orbit": 50.0,
+   "zoom": 1.6,
+   "tilt": 66.0,
+   "cx": 615.0,
+   "cy": 185.0,
+   "fy": 0.6,
+   "ease": "sine",
+   "persp": 1.0
+  }
+ ],
+ "atlas": [
+  142,
+  17
+ ],
+ "sprites": [
+  {
+   "rect": [
+    0,
+    0,
+    7,
+    10
+   ],
+   "x": 404.0,
+   "y": 402.0,
+   "h": 0.5,
+   "scale": 1.0,
+   "emissive": true,
+   "frame": 0,
+   "frames": 3
+  },
+  {
+   "rect": [
+    8,
+    0,
+    7,
+    10
+   ],
+   "x": 404.0,
+   "y": 402.0,
+   "h": 0.5,
+   "scale": 1.0,
+   "emissive": true,
+   "frame": 1,
+   "frames": 3
+  },
+  {
+   "rect": [
+    16,
+    0,
+    7,
+    10
+   ],
+   "x": 404.0,
+   "y": 402.0,
+   "h": 0.5,
+   "scale": 1.0,
+   "emissive": true,
+   "frame": 2,
+   "frames": 3
+  },
+  {
+   "rect": [
+    24,
+    0,
+    10,
+    13
+   ],
+   "x": 437.0,
+   "y": 387.3157043457031,
+   "h": 0.0,
+   "scale": 0.85,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  },
+  {
+   "rect": [
+    35,
+    0,
+    10,
+    13
+   ],
+   "x": 454.0,
+   "y": 382.90338134765625,
+   "h": 0.0,
+   "scale": 0.85,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  },
+  {
+   "rect": [
+    46,
+    0,
+    10,
+    13
+   ],
+   "x": 471.0,
+   "y": 381.85675048828125,
+   "h": 0.0,
+   "scale": 0.85,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  },
+  {
+   "rect": [
+    57,
+    0,
+    10,
+    13
+   ],
+   "x": 488.0,
+   "y": 382.6839599609375,
+   "h": 0.0,
+   "scale": 0.85,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  },
+  {
+   "rect": [
+    68,
+    0,
+    10,
+    13
+   ],
+   "x": 505.0,
+   "y": 382.96063232421875,
+   "h": 0.0,
+   "scale": 0.85,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  },
+  {
+   "rect": [
+    79,
+    0,
+    10,
+    13
+   ],
+   "x": 522.0,
+   "y": 381.19140625,
+   "h": 0.0,
+   "scale": 0.85,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  },
+  {
+   "rect": [
+    90,
+    0,
+    10,
+    13
+   ],
+   "x": 539.0,
+   "y": 377.97674560546875,
+   "h": 0.0,
+   "scale": 0.85,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  },
+  {
+   "rect": [
+    101,
+    0,
+    10,
+    13
+   ],
+   "x": 556.0,
+   "y": 375.6734619140625,
+   "h": 0.0,
+   "scale": 0.85,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  },
+  {
+   "rect": [
+    112,
+    0,
+    10,
+    15
+   ],
+   "x": 402.0,
+   "y": 339.0,
+   "h": 0.0,
+   "scale": 0.85,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  },
+  {
+   "rect": [
+    123,
+    0,
+    18,
+    17
+   ],
+   "x": 406.0,
+   "y": 339.5,
+   "h": 0.0,
+   "scale": 0.4,
+   "emissive": false,
+   "frame": 0,
+   "frames": 1
+  }
+ ],
+ "splats": [],
+ "labels": [
+  {
+   "id": "v-realm-pixels",
+   "kind": "villager",
+   "text": "@realm.pixels",
+   "sub": "tent",
+   "pos": [
+    384.0,
+    392.0,
+    11.0
+   ]
+  },
+  {
+   "id": "v-keelinbb",
+   "kind": "villager",
+   "text": "@keelinbb",
+   "sub": "river house 0",
+   "pos": [
+    418.0,
+    386.39,
+    16.0
+   ]
+  },
+  {
+   "id": "v-lordwuff",
+   "kind": "villager",
+   "text": "@lordwuff",
+   "sub": "river house 1",
+   "pos": [
+    435.0,
+    379.32,
+    17.0
+   ]
+  },
+  {
+   "id": "v-liprontea",
+   "kind": "villager",
+   "text": "@liprontea",
+   "sub": "the castle",
+   "pos": [
+    410.0,
+    320.0,
+    58.0
+   ]
+  },
+  {
+   "id": "v-david-rosas22",
+   "kind": "villager",
+   "text": "@david_.rosas22",
+   "sub": "river house 2",
+   "pos": [
+    452.0,
+    374.9,
+    17.0
+   ]
+  },
+  {
+   "id": "v-mikkosiiv",
+   "kind": "villager",
+   "text": "@mikkosiiv",
+   "sub": "river house 3",
+   "pos": [
+    469.0,
+    373.86,
+    17.0
+   ]
+  },
+  {
+   "id": "v-ethanvarner4",
+   "kind": "villager",
+   "text": "@ethanvarner4",
+   "sub": "river house 4",
+   "pos": [
+    486.0,
+    374.68,
+    16.0
+   ]
+  },
+  {
+   "id": "v-diegothx",
+   "kind": "villager",
+   "text": "@diegothx",
+   "sub": "river house 5",
+   "pos": [
+    503.0,
+    374.96,
+    19.0
+   ]
+  },
+  {
+   "id": "v-matt-sampson",
+   "kind": "villager",
+   "text": "@matt_sampson__",
+   "sub": "river house 6",
+   "pos": [
+    520.0,
+    373.19,
+    16.0
+   ]
+  },
+  {
+   "id": "v-embernoctis-studio",
+   "kind": "villager",
+   "text": "@embernoctis.studio",
+   "sub": "river house 7",
+   "pos": [
+    537.0,
+    369.98,
+    17.0
+   ]
+  },
+  {
+   "id": "v-dovehilltop",
+   "kind": "villager",
+   "text": "@dovehilltop",
+   "sub": "river house 8",
+   "pos": [
+    554.0,
+    367.67,
+    17.0
+   ]
+  },
+  {
+   "id": "v-drizzer84",
+   "kind": "villager",
+   "text": "@drizzer84",
+   "sub": "home",
+   "pos": [
+    372.0,
+    451.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-themetalkiddo2",
+   "kind": "villager",
+   "text": "@themetalkiddo2",
+   "sub": "basement house with a cellar hatch",
+   "pos": [
+    399.0,
+    451.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-lyneys-top-hat4",
+   "kind": "villager",
+   "text": "@lyneys_top_hat4",
+   "sub": "home",
+   "pos": [
+    385.5,
+    451.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-ducktrillion",
+   "kind": "villager",
+   "text": "@ducktrillion",
+   "sub": "home",
+   "pos": [
+    412.5,
+    451.0,
+    16.0
+   ]
+  },
+  {
+   "id": "v-halfsandhalfwich",
+   "kind": "villager",
+   "text": "@halfsandhalfwich",
+   "sub": "home",
+   "pos": [
+    426.0,
+    451.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-brody-batesole",
+   "kind": "villager",
+   "text": "@brody.batesole",
+   "sub": "home",
+   "pos": [
+    439.5,
+    451.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-just-t4te",
+   "kind": "villager",
+   "text": "@just_t4te",
+   "sub": "the castle",
+   "pos": [
+    394.0,
+    337.0,
+    58.0
+   ]
+  },
+  {
+   "id": "v-austin-mash",
+   "kind": "villager",
+   "text": "@austin__mash",
+   "sub": "home",
+   "pos": [
+    466.5,
+    451.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-xiko-martinez",
+   "kind": "villager",
+   "text": "@xiko_martinez",
+   "sub": "home",
+   "pos": [
+    480.0,
+    451.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-darrellrasor42",
+   "kind": "villager",
+   "text": "@darrellrasor42",
+   "sub": "home",
+   "pos": [
+    493.5,
+    451.0,
+    16.0
+   ]
+  },
+  {
+   "id": "v-hudsonryder",
+   "kind": "villager",
+   "text": "@hudsonryder_",
+   "sub": "fishing hut",
+   "pos": [
+    354.0,
+    387.0,
+    10.0
+   ]
+  },
+  {
+   "id": "v-q-saliaz",
+   "kind": "villager",
+   "text": "@q_saliaz",
+   "sub": "home",
+   "pos": [
+    520.5,
+    451.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-sam-ackerson",
+   "kind": "villager",
+   "text": "@sam.ackerson",
+   "sub": "home",
+   "pos": [
+    534.0,
+    451.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-javiair12345",
+   "kind": "villager",
+   "text": "@javiair12345",
+   "sub": "home",
+   "pos": [
+    547.5,
+    451.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-skankestlizard",
+   "kind": "villager",
+   "text": "@skankestlizard",
+   "sub": "home",
+   "pos": [
+    574.5,
+    451.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-carlossgarciaah",
+   "kind": "villager",
+   "text": "@carlossgarciaah",
+   "sub": "no house: wanders the new street",
+   "pos": [
+    426.0,
+    468.0,
+    9.5
+   ]
+  },
+  {
+   "id": "v-kaiden-forsythe",
+   "kind": "villager",
+   "text": "@kaiden.forsythe",
+   "sub": "home",
+   "pos": [
+    588.0,
+    451.0,
+    16.0
+   ]
+  },
+  {
+   "id": "v-gulalireng",
+   "kind": "villager",
+   "text": "@gulalireng",
+   "sub": "the crypt",
+   "pos": [
+    453.0,
+    451.0,
+    12.5
+   ]
+  },
+  {
+   "id": "v-tg-jhonlloyd",
+   "kind": "villager",
+   "text": "@tg.jhonlloyd",
+   "sub": "home",
+   "pos": [
+    601.5,
+    451.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-michi-gellrich",
+   "kind": "villager",
+   "text": "@michi_gellrich",
+   "sub": "the forge (blacksmith)",
+   "pos": [
+    507.0,
+    451.0,
+    14.5
+   ]
+  },
+  {
+   "id": "v-natesucksfr",
+   "kind": "villager",
+   "text": "@natesucksfr",
+   "sub": "home",
+   "pos": [
+    615.0,
+    451.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-pheonix-preston",
+   "kind": "villager",
+   "text": "@pheonix_preston",
+   "sub": "home",
+   "pos": [
+    372.0,
+    477.0,
+    16.0
+   ]
+  },
+  {
+   "id": "v-vinicius-lima448",
+   "kind": "villager",
+   "text": "@vinicius_lima448",
+   "sub": "home",
+   "pos": [
+    385.5,
+    477.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-aaron-chu77",
+   "kind": "villager",
+   "text": "@aaron_chu77",
+   "sub": "home",
+   "pos": [
+    399.0,
+    477.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-kacevasari",
+   "kind": "villager",
+   "text": "@kacevasari",
+   "sub": "home",
+   "pos": [
+    412.5,
+    477.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-a-mram0s",
+   "kind": "villager",
+   "text": "@a.mram0s",
+   "sub": "home",
+   "pos": [
+    426.0,
+    477.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-jacobbudsan",
+   "kind": "villager",
+   "text": "@jacobbudsan_",
+   "sub": "home",
+   "pos": [
+    439.5,
+    477.0,
+    16.0
+   ]
+  },
+  {
+   "id": "v-the-erikrdz",
+   "kind": "villager",
+   "text": "@the.erikrdz",
+   "sub": "home",
+   "pos": [
+    453.0,
+    477.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-abdu-llah02058",
+   "kind": "villager",
+   "text": "@abdu.llah02058",
+   "sub": "the restaurant",
+   "pos": [
+    561.0,
+    451.0,
+    11.5
+   ]
+  },
+  {
+   "id": "v-dnshaqill",
+   "kind": "villager",
+   "text": "@dnshaqill",
+   "sub": "home",
+   "pos": [
+    466.5,
+    477.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-rayquazar9",
+   "kind": "villager",
+   "text": "@rayquazar9",
+   "sub": "home",
+   "pos": [
+    480.0,
+    477.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-z-boib",
+   "kind": "villager",
+   "text": "@z.boib",
+   "sub": "home",
+   "pos": [
+    493.5,
+    477.0,
+    16.0
+   ]
+  },
+  {
+   "id": "v-72ndjaden",
+   "kind": "villager",
+   "text": "@72ndjaden",
+   "sub": "home",
+   "pos": [
+    507.0,
+    477.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-huntman225",
+   "kind": "villager",
+   "text": "@huntman225",
+   "sub": "wizard tower with a mini black hole",
+   "pos": [
+    636.6,
+    464.0,
+    49.23
+   ]
+  },
+  {
+   "id": "v-good-kind-friend",
+   "kind": "villager",
+   "text": "@good_kind_friend",
+   "sub": "home",
+   "pos": [
+    520.5,
+    477.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-maloyowen",
+   "kind": "villager",
+   "text": "@maloyowen",
+   "sub": "home",
+   "pos": [
+    534.0,
+    477.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-dinh-asia-home",
+   "kind": "villager",
+   "text": "@dinh_asia_home",
+   "sub": "home",
+   "pos": [
+    547.5,
+    477.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-seth-h0lt",
+   "kind": "villager",
+   "text": "@seth.h0lt",
+   "sub": "home",
+   "pos": [
+    561.0,
+    477.0,
+    16.0
+   ]
+  },
+  {
+   "id": "v-samm-knightt",
+   "kind": "villager",
+   "text": "@samm.knightt",
+   "sub": "home",
+   "pos": [
+    574.5,
+    477.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-silyano5335",
+   "kind": "villager",
+   "text": "@silyano5335",
+   "sub": "home",
+   "pos": [
+    588.0,
+    477.0,
+    13.0
+   ]
+  },
+  {
+   "id": "v-a-hum-phreys",
+   "kind": "villager",
+   "text": "@a_hum_phreys",
+   "sub": "home",
+   "pos": [
+    601.5,
+    477.0,
+    14.0
+   ]
+  },
+  {
+   "id": "v-kin-t-s",
+   "kind": "villager",
+   "text": "@kin_t_s",
+   "sub": "home",
+   "pos": [
+    615.0,
+    477.0,
+    13.0
+   ]
+  },
+  {
+   "id": "b-tent-woodpile-fire-pit",
+   "kind": "build",
+   "text": "tent, woodpile, fire pit",
+   "sub": "@realm.pixels",
+   "pos": [
+    384.0,
+    392.0,
+    11.0
+   ]
+  },
+  {
+   "id": "b-castle",
+   "kind": "build",
+   "text": "castle",
+   "sub": "wish of @liprontea",
+   "pos": [
+    410.0,
+    320.0,
+    58.0
+   ]
+  },
+  {
+   "id": "b-black-cat",
+   "kind": "build",
+   "text": "black cat",
+   "sub": "wish of @liprontea",
+   "pos": [
+    406.0,
+    339.5,
+    6.0
+   ]
+  },
+  {
+   "id": "b-dragon",
+   "kind": "build",
+   "text": "dragon",
+   "sub": "wish of @liprontea; came out of the structure",
+   "pos": [
+    412.0,
+    317.0,
+    58.0
+   ]
+  },
+  {
+   "id": "b-statue-for-the-forest-gods",
+   "kind": "build",
+   "text": "statue for the Forest gods",
+   "sub": "wish of @dovehilltop",
+   "pos": [
+    438.0,
+    422.0,
+    28.0
+   ]
+  },
+  {
+   "id": "b-nine-river-houses",
+   "kind": "build",
+   "text": "nine river houses",
+   "sub": "followers 2\u201311",
+   "pos": [
+    486.0,
+    374.68,
+    16.0
+   ]
+  },
+  {
+   "id": "b-the-giant-structure",
+   "kind": "build",
+   "text": "the giant structure",
+   "sub": "rose from the ground on Day 2, unexplained",
+   "pos": [
+    565.0,
+    292.0,
+    5.0
+   ]
+  },
+  {
+   "id": "b-structure-moved",
+   "kind": "build",
+   "text": "structure moved",
+   "sub": "unexplained; a hooded figure seen on its tower",
+   "pos": [
+    685.0,
+    110.0,
+    118.0
+   ]
+  },
+  {
+   "id": "b-hd-scary-dragon",
+   "kind": "build",
+   "text": "HD scary dragon",
+   "sub": "\u2014",
+   "pos": [
+    412.0,
+    317.0,
+    58.0
+   ]
+  },
+  {
+   "id": "b-tiki-lagoon",
+   "kind": "build",
+   "text": "tiki lagoon",
+   "sub": "wish of @darrellrasor42 (7\u2665)",
+   "pos": [
+    210.0,
+    360.0,
+    -27.9
+   ]
+  },
+  {
+   "id": "b-new-street",
+   "kind": "build",
+   "text": "new street",
+   "sub": "Day 3 followers",
+   "pos": [
+    372.0,
+    464.0,
+    3.0
+   ]
+  },
+  {
+   "id": "b-forge",
+   "kind": "build",
+   "text": "forge",
+   "sub": "wish of @michi_gellrich",
+   "pos": [
+    507.0,
+    451.0,
+    14.5
+   ]
+  },
+  {
+   "id": "b-restaurant",
+   "kind": "build",
+   "text": "restaurant",
+   "sub": "wish of @abdu.llah02058",
+   "pos": [
+    561.0,
+    451.0,
+    11.5
+   ]
+  },
+  {
+   "id": "b-basement-house-with-a-cellar-hatch",
+   "kind": "build",
+   "text": "basement house with a cellar hatch",
+   "sub": "wish of @themetalkiddo2",
+   "pos": [
+    399.0,
+    451.0,
+    14.0
+   ]
+  },
+  {
+   "id": "b-crypt",
+   "kind": "build",
+   "text": "crypt",
+   "sub": "for @gulalireng",
+   "pos": [
+    453.0,
+    451.0,
+    12.5
+   ]
+  },
+  {
+   "id": "b-wizard-tower-with-a-mini-black-hole",
+   "kind": "build",
+   "text": "wizard tower with a mini black hole",
+   "sub": "wish of @huntman225",
+   "pos": [
+    637.0,
+    464.0,
+    48.89
+   ]
+  },
+  {
+   "id": "b-fishing-hut-dock-and-boat",
+   "kind": "build",
+   "text": "fishing hut, dock and boat",
+   "sub": "wish of @hudsonryder_ with @maloyowen",
+   "pos": [
+    354.0,
+    387.0,
+    10.0
+   ]
+  },
+  {
+   "id": "b-stone-bridge",
+   "kind": "build",
+   "text": "stone bridge",
+   "sub": "the castle had no way across",
+   "pos": [
+    402.0,
+    393.07,
+    5.0
+   ]
+  },
+  {
+   "id": "b-gatehouse-for-the-knight",
+   "kind": "build",
+   "text": "gatehouse  for the knight",
+   "sub": "@just_t4te no longer lives in @liprontea's castle",
+   "pos": [
+    384.0,
+    346.0,
+    18.0
+   ]
+  },
+  {
+   "id": "p-the-camp",
+   "kind": "place",
+   "text": "The camp",
+   "sub": "",
+   "pos": [
+    400.0,
+    400.0,
+    16.0
+   ]
+  },
+  {
+   "id": "p-the-river",
+   "kind": "place",
+   "text": "The river",
+   "sub": "",
+   "pos": [
+    460.0,
+    353.04,
+    27.0
+   ]
+  },
+  {
+   "id": "p-river-house-row",
+   "kind": "place",
+   "text": "River-house row",
+   "sub": "",
+   "pos": [
+    486.0,
+    374.68,
+    21.0
+   ]
+  },
+  {
+   "id": "p-castle-mound",
+   "kind": "place",
+   "text": "Castle mound",
+   "sub": "",
+   "pos": [
+    410.0,
+    320.0,
+    58.0
+   ]
+  },
+  {
+   "id": "p-the-giant-structure",
+   "kind": "place",
+   "text": "The giant structure",
+   "sub": "",
+   "pos": [
+    685.0,
+    110.0,
+    118.0
+   ]
+  },
+  {
+   "id": "p-statue-clearing",
+   "kind": "place",
+   "text": "Statue clearing",
+   "sub": "",
+   "pos": [
+    438.0,
+    422.0,
+    28.0
+   ]
+  },
+  {
+   "id": "p-cliff-waterfall",
+   "kind": "place",
+   "text": "Cliff waterfall",
+   "sub": "",
+   "pos": [
+    245.32,
+    354.98,
+    30.0
+   ]
+  },
+  {
+   "id": "p-lowland-lake",
+   "kind": "place",
+   "text": "Lowland lake",
+   "sub": "",
+   "pos": [
+    203.32,
+    358.98,
+    -6.3
+   ]
+  },
+  {
+   "id": "p-plot-p0",
+   "kind": "place",
+   "text": "Plot P0",
+   "sub": "",
+   "pos": [
+    424.0,
+    410.0,
+    5.0
+   ]
+  },
+  {
+   "id": "p-plot-p1",
+   "kind": "place",
+   "text": "Plot P1",
+   "sub": "",
+   "pos": [
+    372.0,
+    412.0,
+    7.54
+   ]
+  },
+  {
+   "id": "p-plot-p2",
+   "kind": "place",
+   "text": "Plot P2",
+   "sub": "",
+   "pos": [
+    408.0,
+    428.0,
+    5.0
+   ]
+  },
+  {
+   "id": "p-plot-p3",
+   "kind": "place",
+   "text": "Plot P3",
+   "sub": "",
+   "pos": [
+    388.0,
+    430.0,
+    5.0
+   ]
+  },
+  {
+   "id": "p-plot-p4",
+   "kind": "place",
+   "text": "Plot P4",
+   "sub": "",
+   "pos": [
+    428.0,
+    394.0,
+    15.0
+   ]
+  },
+  {
+   "id": "p-plot-p5",
+   "kind": "place",
+   "text": "Plot P5",
+   "sub": "",
+   "pos": [
+    368.0,
+    396.0,
+    11.5
+   ]
+  },
+  {
+   "id": "p-the-new-street",
+   "kind": "place",
+   "text": "The new street",
+   "sub": "",
+   "pos": [
+    504.0,
+    464.0,
+    30.0
+   ]
+  },
+  {
+   "id": "p-fishing-dock",
+   "kind": "place",
+   "text": "Fishing dock",
+   "sub": "",
+   "pos": [
+    356.0,
+    380.0,
+    10.0
+   ]
+  },
+  {
+   "id": "p-farm-planned-day-3-part-2",
+   "kind": "place",
+   "text": "Farm (planned, Day 3 \u00b7 Part 2)",
+   "sub": "",
+   "pos": [
+    400.0,
+    532.0,
+    16.0
+   ]
+  },
+  {
+   "id": "p-west-street-planned-day-3-part-2",
+   "kind": "place",
+   "text": "West street (planned, Day 3 \u00b7 Part 2)",
+   "sub": "",
+   "pos": [
+    318.0,
+    464.0,
+    30.0
+   ]
+  },
+  {
+   "id": "p-horse-stable-planned-day-3-part-2",
+   "kind": "place",
+   "text": "Horse stable (planned, Day 3 \u00b7 Part 2)",
+   "sub": "",
+   "pos": [
+    368.0,
+    396.0,
+    11.5
+   ]
+  },
+  {
+   "id": "p-alchemist-s-lab-planned-day-3-part-2",
+   "kind": "place",
+   "text": "Alchemist's lab (planned, Day 3 \u00b7 Part 2)",
+   "sub": "",
+   "pos": [
+    648.0,
+    464.0,
+    49.9
+   ]
+  }
+ ]
+}

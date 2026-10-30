@@ -1,4 +1,5 @@
 // realm.pixels world viewer: draws data/dayN/ (written by export.py from the day's own engine) with the reel's look.
+// game.js builds on it (exports `API` at the end): tools that mine, fell, place blocks and stamp buildings.
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.170.0/three.module.min.js';
 import * as S from './shaders.js';
 
@@ -38,11 +39,12 @@ const progress = (f, label) => { bar.style.transform = `scaleX(${f})`; loadText.
 
 const hashParams = () => new URLSearchParams(location.hash.slice(1));
 const INDEX = await (await fetch('data/days.json', { cache: 'no-cache' })).json();
-const wantDay = +hashParams().get('day');
-const DAYN = INDEX.days.some((d) => d.n === wantDay) ? wantDay : INDEX.latest;
-const DIR = `data/day${DAYN}/`;
+const wantDay = hashParams().get('day');                // a day number, or a scene's id (e.g. hoard)
+const DAYN = (INDEX.days.find((d) => String(d.n) === wantDay) || { n: INDEX.latest }).n;
+const DIR = typeof DAYN === 'number' ? `data/day${DAYN}/` : `data/${DAYN}/`;
+const NAME = typeof DAYN === 'number' ? `Day ${DAYN}` : (INDEX.days.find((d) => d.n === DAYN)?.title || DAYN);
 const M = await (await fetch(DIR + 'manifest.json', { cache: 'no-cache' })).json();
-const vbuf = await fetchBuf(DIR + 'voxels.bin', `Day ${DAYN}: ${(M.n_voxels / 1e6).toFixed(2)} M voxels`, progress);
+const vbuf = await fetchBuf(DIR + 'voxels.bin', `${NAME}: ${(M.n_voxels / 1e6).toFixed(2)} M voxels`, progress);
 const gbuf = new Uint8Array(await fetchBuf(DIR + 'ground.bin'));
 const rbuf = new Uint8Array(await fetchBuf(DIR + 'riverd.bin'));
 loadText.textContent = 'Building faces…';
@@ -104,7 +106,8 @@ function dataTex(arr, fmt) {
 }
 const texGround = dataTex(gbuf, THREE.RGBAFormat);
 const texRiver = dataTex(rbuf, THREE.RedFormat);
-const texSprites = await new THREE.TextureLoader().loadAsync(DIR + 'sprites.png?' + M.generated);
+const texSprites = M.sprites.length ? await new THREE.TextureLoader().loadAsync(DIR + 'sprites.png?' + M.generated)
+  : new THREE.DataTexture(new Uint8Array(4), 1, 1);   // a scene with no flat sprites (the hoard hall) has no atlas
 texSprites.flipY = false; texSprites.minFilter = texSprites.magFilter = THREE.NearestFilter; texSprites.needsUpdate = true;
 
 const SRES = M.shadow.res;
@@ -158,6 +161,17 @@ const quadCorners = () => { const g = new THREE.InstancedBufferGeometry(); g.set
 // ------------------------------------------------------------- scenes
 const sceneShadow = new THREE.Scene(), sceneMain = new THREE.Scene();
 let nFaces = 0;
+// per exported part, where each voxel's faces are drawn (the scene may be split into the motion pieces): the game
+// (game.js) hides a voxel's face f as instance voxFirst[i] + rank of geometry geoms[voxGeom[i]]
+const partFaces = M.parts.map((p) => ({ geoms: [], voxGeom: new Int16Array(p.count).fill(-1), voxFirst: new Uint32Array(p.count) }));
+function register(k, part, keep, g) {
+  const pf = partFaces[k], gi = pf.geoms.push(g) - 1, u8 = new Uint8Array(vbuf, part.offset * REC, part.count * REC);
+  let nf = 0;
+  for (let i = 0; i < part.count; i++) {
+    if (keep && !keep[i]) continue;
+    pf.voxGeom[i] = gi; pf.voxFirst[i] = nf; nf += POP[u8[i * REC + 9] & 63];
+  }
+}
 const faceMat = raw(S.FACE_VS, S.FACE_FS, U, { depthFunc: THREE.LessDepth });
 const shadowMat = raw(S.SHADOW_VS, S.SHADOW_FS, U);
 function addFaces(d, fm = faceMat, sm = shadowMat, visible = true) {
@@ -176,8 +190,8 @@ function addFaces(d, fm = faceMat, sm = shadowMat, visible = true) {
   return { face, shad, show(v) { face.visible = shad.visible = v; } };
 }
 const frozen = {};                                   // the reel's still copy of each moving thing (hidden while it moves)
-for (const part of M.parts) {
-  if (!MO || part.name !== 'scene') { addFaces(expand(part)); continue; }
+for (const [k, part] of M.parts.entries()) {
+  if (!MO || part.name !== 'scene') { register(k, part, null, addFaces(expand(part)).face.geometry); continue; }
   const u16 = new Uint16Array(vbuf, part.offset * REC, part.count * REC / 2), u8 = new Uint8Array(vbuf, part.offset * REC, part.count * REC);
   const rest = new Uint8Array(part.count).fill(1);
   for (const m of MO.meshes) {
@@ -188,8 +202,9 @@ for (const part of M.parts) {
       mask[i] = 1; rest[i] = 0;
     }
     frozen[m.name] = addFaces(expand(part, vbuf, mask));
+    register(k, part, mask, frozen[m.name].face.geometry);
   }
-  addFaces(expand(part, vbuf, rest));
+  register(k, part, rest, addFaces(expand(part, vbuf, rest)).face.geometry);
 }
 const moving = {};                                   // per moving thing: its frames and its own transform uniforms
 for (const m of MO ? MO.meshes : []) {
@@ -209,7 +224,7 @@ const groundU = {
 const fullscreen = (mat, order = 0) => { const m = new THREE.Mesh(quad, mat); m.frustumCulled = false; m.renderOrder = order; const sc = new THREE.Scene(); sc.add(m); return { m, sc }; };
 const ground = new THREE.Mesh(quad, raw(S.QUAD_VS, S.GROUND_FS, groundU, { depthFunc: THREE.LessEqualDepth }));
 ground.frustumCulled = false; ground.renderOrder = 0;
-sceneMain.add(ground);
+if (!M.interior) sceneMain.add(ground);              // underground scenes have no ground plane and no sky
 const sceneMask = fullscreen(raw(S.QUAD_VS, S.GROUND_FS, { ...groundU, mode: { value: 0 } }, { depthTest: false, depthWrite: false })).sc;
 const horU = { mask: { value: null }, res: U.res, H: U.H };
 const sceneHor = fullscreen(raw(S.QUAD_VS, S.HORIZON_FS, horU, { depthTest: false, depthWrite: false })).sc;
@@ -261,7 +276,7 @@ const pickShot = M.shots.filter((s) => !s.label.startsWith('CANON'));
 const last = pickShot[pickShot.length - 1] || { orbit: 38, zoom: 1.5, tilt: 60, cx: M.C[0], cy: M.C[1], fy: 0.6, persp: 1 };
 const cam = { orbit: last.orbit, zoom: last.zoom, tilt: last.tilt, cx: last.cx, cy: last.cy, fy: last.fy, persp: last.persp };
 const view = { res: 1, env: 'reel', animate: false, t: M.t, Weng: FRAME_W, labels: { villager: true, build: true, place: false },
-  safe: true, cover: false, outside: true, sel: null };
+  safe: true, cover: false, outside: true, sel: null, tool: 'look' };
 
 function derived(c) {
   const a = rad(c.tilt), th = rad(c.orbit);
@@ -366,8 +381,9 @@ function draw() {
   if (M.style === 1) blur(fogRT.textures[2], sky3RT, 3 * view.res);
   renderer.setRenderTarget(null); renderer.clear(true, true, false); renderer.render(sceneComp, cam0);
   placeLabels(d);
-  $('stat').textContent = `${(M.n_voxels / 1e6).toFixed(2)} M voxels · ${(nFaces / 1e6).toFixed(2)} M faces · ${Wpx}×${Hpx} px · ${(performance.now() - tic).toFixed(0)} ms cpu`;
+  $('stat').textContent = `${(M.n_voxels / 1e6).toFixed(2)} M voxels · ${(nFaces / 1e6).toFixed(2)} M faces${stats.extra} · ${Wpx}×${Hpx} px · ${(performance.now() - tic).toFixed(0)} ms cpu`;
 }
+const stats = { extra: '' };
 const motion = { water: false, fire: false, sky: false, dragon: false, hunchback: false, 'black hole': false };
 const since = {};                                    // when each motion was switched on (performance.now ms)
 const held = { water: 0, fire: 0, sky: 0 };          // clock value carried over when a motion is paused
@@ -543,7 +559,7 @@ const daySel = $('day');
 for (const d of INDEX.days) {
   const o = document.createElement('option');
   o.value = d.n;
-  o.textContent = `Day ${d.n}${d.final ? '' : ' (in production)'} · end of reel, t = ${d.t} s`;
+  o.textContent = d.scene ? `${d.title} (scene, t = ${d.t} s)` : `Day ${d.n}${d.final ? '' : ' (in production)'} · end of reel, t = ${d.t} s`;
   daySel.appendChild(o);
 }
 daySel.value = DAYN;
@@ -651,6 +667,7 @@ stage.addEventListener('pointerup', lift);
 stage.addEventListener('pointercancel', lift);
 stage.addEventListener('wheel', (e) => { e.preventDefault(); cam.zoom *= Math.exp(-e.deltaY * 0.0012); changed(); }, { passive: false });
 stage.addEventListener('dblclick', (e) => {
+  if (view.tool !== 'look') return;                // building: double-clicks are two clicks of the tool
   const cr = canvas.getBoundingClientRect(), k = H / cr.height;
   const g = groundAt(derived(cam), (e.clientX - cr.left) * k, (e.clientY - cr.top) * k);
   if (g) { cam.cx = g[0]; cam.cy = g[1]; changed(); }
@@ -687,3 +704,8 @@ changed();
 $('loading').remove();
 window.__viewer = { cam, view, M, project: (x, y, h) => project(derived(cam), x, y, h) };
 loop();
+
+export const API = {
+  THREE, M, DAYN, vbuf, partFaces, faceMat, shadowMat, quadCorners, sceneMain, sceneShadow, cam, view, derived, H, canvas, stage,
+  stats, markDirty: () => { dirty = true; }, invalidateShadow: () => { shadowDone = false; dirty = true; },
+};

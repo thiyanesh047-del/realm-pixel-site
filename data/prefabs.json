@@ -1,0 +1,225 @@
+{
+ "q": 64.0,
+ "prefabs": [
+  {
+   "name": "castle",
+   "label": "Castle (stone, terracotta roofs)",
+   "offset": 0,
+   "count": 6247,
+   "size": [
+    39.0,
+    38.0,
+    55.0
+   ]
+  },
+  {
+   "name": "castle_blue",
+   "label": "Castle (blue roofs)",
+   "offset": 6247,
+   "count": 6247,
+   "size": [
+    39.0,
+    38.0,
+    55.0
+   ]
+  },
+  {
+   "name": "castle_purple",
+   "label": "Castle (purple roofs)",
+   "offset": 12494,
+   "count": 6247,
+   "size": [
+    39.0,
+    38.0,
+    55.0
+   ]
+  },
+  {
+   "name": "house_plaster",
+   "label": "House: timber frame",
+   "offset": 18741,
+   "count": 1888,
+   "size": [
+    11.0,
+    9.0,
+    10.5
+   ]
+  },
+  {
+   "name": "house_log",
+   "label": "House: log cabin",
+   "offset": 20629,
+   "count": 2227,
+   "size": [
+    12.0,
+    9.0,
+    11.5
+   ]
+  },
+  {
+   "name": "house_stone",
+   "label": "House: stone",
+   "offset": 22856,
+   "count": 1888,
+   "size": [
+    11.0,
+    9.0,
+    10.5
+   ]
+  },
+  {
+   "name": "townhouse",
+   "label": "Townhouse with dormer",
+   "offset": 24744,
+   "count": 2542,
+   "size": [
+    11.0,
+    9.0,
+    13.5
+   ]
+  },
+  {
+   "name": "cottage",
+   "label": "Thatched cottage",
+   "offset": 27286,
+   "count": 2151,
+   "size": [
+    12.0,
+    10.0,
+    11.5
+   ]
+  },
+  {
+   "name": "house_tall",
+   "label": "Two-storey house",
+   "offset": 29437,
+   "count": 2687,
+   "size": [
+    12.0,
+    9.0,
+    13.5
+   ]
+  },
+  {
+   "name": "apartment",
+   "label": "Three-storey house",
+   "offset": 32124,
+   "count": 4057,
+   "size": [
+    12.0,
+    9.0,
+    19.5
+   ]
+  },
+  {
+   "name": "forge",
+   "label": "Forge",
+   "offset": 36181,
+   "count": 2117,
+   "size": [
+    13.0,
+    13.0,
+    12.0
+   ]
+  },
+  {
+   "name": "restaurant",
+   "label": "Restaurant",
+   "offset": 38298,
+   "count": 2232,
+   "size": [
+    14.0,
+    12.5,
+    9.0
+   ]
+  },
+  {
+   "name": "wizard",
+   "label": "Wizard tower",
+   "offset": 40530,
+   "count": 5098,
+   "size": [
+    12.0,
+    12.0,
+    37.0
+   ]
+  },
+  {
+   "name": "crypt",
+   "label": "Crypt",
+   "offset": 45628,
+   "count": 1296,
+   "size": [
+    10.0,
+    8.0,
+    10.0
+   ]
+  },
+  {
+   "name": "river_house",
+   "label": "River house (Day 2)",
+   "offset": 46924,
+   "count": 412,
+   "size": [
+    13.0,
+    11.0,
+    14.0
+   ]
+  },
+  {
+   "name": "statue",
+   "label": "Statue",
+   "offset": 47336,
+   "count": 297,
+   "size": [
+    13.0,
+    9.0,
+    25.0
+   ]
+  },
+  {
+   "name": "tent",
+   "label": "Tent",
+   "offset": 47633,
+   "count": 250,
+   "size": [
+    11.0,
+    12.0,
+    8.0
+   ]
+  },
+  {
+   "name": "pine",
+   "label": "Pine tree",
+   "offset": 47883,
+   "count": 354,
+   "size": [
+    13.0,
+    12.0,
+    24.0
+   ]
+  },
+  {
+   "name": "oak",
+   "label": "Oak tree",
+   "offset": 48237,
+   "count": 257,
+   "size": [
+    11.0,
+    11.0,
+    16.0
+   ]
+  },
+  {
+   "name": "bridge",
+   "label": "Stone bridge (30 long)",
+   "offset": 48494,
+   "count": 2188,
+   "size": [
+    7.0,
+    30.0,
+    9.0
+   ]
+  }
+ ]
+}

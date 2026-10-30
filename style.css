@@ -140,6 +140,18 @@ body.catalog { overflow-y: auto; }
 .docnav a.on { background: var(--panel-2); border-color: var(--teal); }
 .empty { color: var(--muted); font-style: italic; }
 
+/* ---------- the game */
+.tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.tools button { padding: 6px 9px; font-size: 13px; }
+.tools button.on { background: var(--teal); color: #032a26; border-color: var(--teal); }
+.g-opts { display: flex; flex-direction: column; gap: 6px; }
+.g-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.swatches { display: grid; grid-template-columns: repeat(6, 26px); gap: 5px; }
+.swatch { width: 26px; height: 26px; padding: 0; border: 1px solid var(--line); border-radius: 4px; }
+input[type=color] { width: 44px; height: 28px; padding: 0 2px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; }
+#game [hidden] { display: none !important; }
+#stage.building { cursor: crosshair; }
+
 /* ---------- creatures */
 .crit { max-width: 1280px; margin: 0 auto; padding-block: 16px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
   display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 16px; }

@@ -1,9 +1,10 @@
 {
- "generated": "2026-10-30T12:32:38",
+ "generated": "2026-10-30T18:48:53",
  "day": 3,
  "source": "day3",
  "t": 38.0,
  "world": 800,
+ "interior": false,
  "C": [
   400.0,
   400.0
@@ -1630,6 +1631,28 @@
     354.0,
     387.0,
     10.0
+   ]
+  },
+  {
+   "id": "b-stone-bridge",
+   "kind": "build",
+   "text": "stone bridge",
+   "sub": "the castle had no way across",
+   "pos": [
+    402.0,
+    393.07,
+    5.0
+   ]
+  },
+  {
+   "id": "b-gatehouse-for-the-knight",
+   "kind": "build",
+   "text": "gatehouse  for the knight",
+   "sub": "@just_t4te no longer lives in @liprontea's castle",
+   "pos": [
+    384.0,
+    346.0,
+    18.0
    ]
   },
   {

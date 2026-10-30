@@ -99,6 +99,7 @@ vec3 xform(vec3 p) {
 }
 
 void main() {
+    if (aMisc.w > 0.5) { gl_Position = vec4(2.0, 2.0, 2.0, 1.0); return; }   // removed in the game (edit.js)
     int fl = int(aCol.w + 0.5);
     float size = aMisc.z / 100.0;
     vec3 lb = aPos / q - 64.0;
@@ -171,6 +172,7 @@ vec3 xform(vec3 p) {
     return vec3(c * a.x - s * a.y + xf.x, s * a.x + c * a.y + xf.y, a.z + xf.z);
 }
 void main() {
+    if (aMisc.w > 0.5) { gl_Position = vec4(2.0, 2.0, 2.0, 1.0); return; }
     int fl = int(aCol.w + 0.5);
     vec3 p = xform(aPos / q - 64.0 + corner(fl & 7, position.x, position.y) * (aMisc.z / 100.0));
     gl_Position = light_m * vec4(p, 1.0);
