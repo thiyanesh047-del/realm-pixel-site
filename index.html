@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Realm Viewer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="viewer">
+<aside id="panel">
+  <header>
+    <h1>realm.pixels <span>world viewer</span></h1>
+    <nav><a class="on" href="index.html">Viewer</a><a href="catalog.html">Catalog</a></nav>
+    <p id="meta" class="meta"></p>
+  </header>
+
+  <section>
+    <h2>World</h2>
+    <select id="day" aria-label="Which day's world"></select>
+    <label class="inline">Light <select id="env" aria-label="Light"></select></label>
+    <p id="env-note" class="meta"></p>
+  </section>
+
+  <section>
+    <h2>Camera keys of the day</h2>
+    <select id="shots" aria-label="Camera keys"></select>
+    <button id="reset" class="ghost">Back to the last camera</button>
+  </section>
+
+  <section class="sliders">
+    <h2>Camera <small>(span.cam)</small></h2>
+    <label>orbit °<input id="s-orbit" type="range"><input id="n-orbit" type="number" step="1"></label>
+    <label>zoom<input id="s-zoom" type="range"><input id="n-zoom" type="number" step="0.05"></label>
+    <label>tilt °<input id="s-tilt" type="range"><input id="n-tilt" type="number" step="1"></label>
+    <label>centre x<input id="s-cx" type="range"><input id="n-cx" type="number" step="1"></label>
+    <label>centre y<input id="s-cy" type="range"><input id="n-cy" type="number" step="1"></label>
+    <label>focus<input id="s-fy" type="range"><input id="n-fy" type="number" step="0.01"></label>
+    <label>persp<input id="s-persp" type="range"><input id="n-persp" type="number" step="0.05"></label>
+  </section>
+
+  <section>
+    <h2>Key line for the day script's <code>KEYS</code></h2>
+    <div class="keyopts">
+      <label>t <input id="key-t" value="0.0" size="5"></label>
+      <label>easing <select id="key-ease"><option>sine</option><option>cubic</option><option>linear</option><option>None</option></select></label>
+    </div>
+    <textarea id="keyline" rows="2" readonly spellcheck="false"></textarea>
+    <button id="copy">Copy camera key</button>
+  </section>
+
+  <section class="toggles">
+    <h2>Show</h2>
+    <label><input id="t-vill" type="checkbox" checked> villager homes</label>
+    <label><input id="t-build" type="checkbox" checked> builds and wishes</label>
+    <label><input id="t-place" type="checkbox"> places</label>
+    <label><input id="t-safe" type="checkbox" checked> Instagram safe zones</label>
+    <label><input id="t-cover" type="checkbox"> cover crop 3:4</label>
+    <label><input id="t-outside" type="checkbox" checked> dim outside the 9:16 frame</label>
+    <label><input id="t-anim" type="checkbox"> animate water, fire, stars</label>
+    <label><input id="t-sharp" type="checkbox"> sharp (2× the reel's pixels)</label>
+  </section>
+
+  <section class="help">
+    <h2>Controls</h2>
+    <p>Drag: orbit and tilt · right- or shift-drag: pan · wheel: zoom · double-click: centre on that ground · keys W A S D pan, Q E orbit, R F tilt, + − zoom · click a label to centre on it.</p>
+    <p id="stat" class="meta"></p>
+  </section>
+</aside>
+
+<main id="stage">
+  <canvas id="gl"></canvas>
+  <div id="overlay">
+    <div id="dim-l" class="dim"></div><div id="dim-r" class="dim"></div>
+    <div id="frame">
+      <div class="safe top"><span>Instagram header</span></div>
+      <div class="safe bottom"><span>caption, audio, buttons</span></div>
+      <div class="safe right"><span>like · comment · share</span></div>
+      <div class="cover"><span>profile grid 3:4</span></div>
+    </div>
+  </div>
+  <button id="panel-toggle" title="Show or hide the panel">☰</button>
+  <div id="loading"><div class="box"><p id="load-text">Loading…</p><div class="track"><div id="load-bar"></div></div></div></div>
+</main>
+<script type="module" src="viewer.js"></script>
+<script>
+  window.addEventListener('error', (e) => {
+    const t = document.getElementById('load-text');
+    if (t) t.textContent = 'Could not start the viewer: ' + (e.message || e);
+  });
+  window.addEventListener('unhandledrejection', (e) => {
+    const t = document.getElementById('load-text');
+    if (t) t.textContent = 'Could not start the viewer: ' + (e.reason && e.reason.message || e.reason);
+  });
+</script>
+</body>
+</html>

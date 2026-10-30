@@ -1,0 +1,21 @@
+{
+ "days": [
+  {
+   "n": 2,
+   "title": "Day 2 \u2014 \"Something woke up\"",
+   "t": 60.0,
+   "generated": "2026-10-29T23:30:44",
+   "voxels": 1906966,
+   "final": true
+  },
+  {
+   "n": 3,
+   "title": "Day 3 \u2014 \"It moved\" (as rendered, 2026-10-30)",
+   "t": 38.0,
+   "generated": "2026-10-30T12:13:26",
+   "voxels": 2044333,
+   "final": true
+  }
+ ],
+ "latest": 3
+}
