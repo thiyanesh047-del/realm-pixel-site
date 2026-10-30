@@ -12,18 +12,25 @@ const REC = 16;                                    // bytes per voxel in voxels.
 async function fetchBuf(url, label, onProgress) {
   const r = await fetch(url, { cache: 'no-cache' });
   if (!r.ok) throw new Error(`${url}: ${r.status}`);
+  // content-length is the size on the wire: with gzip (GitHub Pages) the body we read is larger, so it only drives the
+  // progress bar; the bytes are collected in chunks and joined at the end
   const total = +r.headers.get('content-length') || 0;
-  if (!r.body || !total || !onProgress) return r.arrayBuffer();
-  const out = new Uint8Array(total);
+  const gz = /gzip|br|deflate/.test(r.headers.get('content-encoding') || '');
+  if (!r.body || !onProgress) return r.arrayBuffer();
   const rd = r.body.getReader();
+  const chunks = [];
   let got = 0;
   for (;;) {
     const { done, value } = await rd.read();
     if (done) break;
-    out.set(value, got);
+    chunks.push(value);
     got += value.length;
-    onProgress(got / total, label);
+    if (total) onProgress(Math.min(0.99, gz ? got / (total * 3) : got / total), label);
   }
+  const out = new Uint8Array(got);
+  let at = 0;
+  for (const c of chunks) { out.set(c, at); at += c.length; }
+  onProgress(1, label);
   return out.buffer;
 }
 const bar = $('load-bar'), loadText = $('load-text');
