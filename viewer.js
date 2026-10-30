@@ -514,30 +514,55 @@ $('copy').addEventListener('click', async () => {
 $('reset').addEventListener('click', () => { shotSel.value = lastIdx; shotSel.dispatchEvent(new Event('change')); });
 $('panel-toggle').addEventListener('click', () => { document.body.classList.toggle('panel-hidden'); setTimeout(resize, 220); });
 
-// mouse: drag = orbit/tilt, right/shift-drag = pan, wheel = zoom, double-click = centre on the ground there
-let drag = null;
+// mouse: drag = pan (map style), right/ctrl-drag = orbit and tilt, wheel = zoom, double-click = centre on the ground there
+// touch: one finger pans; two fingers pinch to zoom, twist to orbit, slide up/down together to tilt
+const pts = new Map();                                // active pointers: id -> {x, y}
+let drag = null, pinch = null;
 stage.addEventListener('contextmenu', (e) => e.preventDefault());
+function panBy(dx, dy) {
+  const k = H / canvas.getBoundingClientRect().height, d = derived(cam);
+  const a = dx * k / cam.zoom, b = dy * k / (cam.zoom * Math.max(d.ca, 0.2));
+  cam.cx -= d.cs * a - d.sn * b;
+  cam.cy -= d.sn * a + d.cs * b;
+}
+function twoFinger() {
+  const [p, q] = [...pts.values()];
+  return { d: Math.hypot(q.x - p.x, q.y - p.y), a: Math.atan2(q.y - p.y, q.x - p.x), my: (p.y + q.y) / 2, mx: (p.x + q.x) / 2 };
+}
 stage.addEventListener('pointerdown', (e) => {
   if (e.target.closest('.label, button')) return;
-  drag = { x: e.clientX, y: e.clientY, pan: e.button === 2 || e.button === 1 || e.shiftKey };
+  pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
   stage.setPointerCapture(e.pointerId);
+  if (pts.size === 2) { drag = null; pinch = twoFinger(); return; }
+  drag = { x: e.clientX, y: e.clientY, orbit: e.button === 2 || e.button === 1 || e.ctrlKey || e.altKey };
 });
 stage.addEventListener('pointermove', (e) => {
+  if (!pts.has(e.pointerId)) return;
+  pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pinch && pts.size >= 2) {
+    const n = twoFinger();
+    if (pinch.d > 0) cam.zoom *= n.d / pinch.d;
+    cam.orbit -= (n.a - pinch.a) * 180 / Math.PI;
+    cam.tilt += (n.my - pinch.my) * 0.15;
+    panBy(n.mx - pinch.mx, 0);
+    pinch = n;
+    changed();
+    return;
+  }
   if (!drag) return;
   const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
   drag.x = e.clientX; drag.y = e.clientY;
-  if (drag.pan) {
-    const k = H / canvas.getBoundingClientRect().height, d = derived(cam);
-    const a = dx * k / cam.zoom, b = dy * k / (cam.zoom * Math.max(d.ca, 0.2));
-    cam.cx -= d.cs * a - d.sn * b;
-    cam.cy -= d.sn * a + d.cs * b;
-  } else {
+  if (drag.orbit) {
     cam.orbit -= dx * 0.3;
     cam.tilt += dy * 0.15;
+  } else {
+    panBy(dx, dy);
   }
   changed();
 });
-stage.addEventListener('pointerup', () => { drag = null; });
+const lift = (e) => { pts.delete(e.pointerId); if (pts.size < 2) pinch = null; if (pts.size === 0) drag = null; };
+stage.addEventListener('pointerup', lift);
+stage.addEventListener('pointercancel', lift);
 stage.addEventListener('wheel', (e) => { e.preventDefault(); cam.zoom *= Math.exp(-e.deltaY * 0.0012); changed(); }, { passive: false });
 stage.addEventListener('dblclick', (e) => {
   const cr = canvas.getBoundingClientRect(), k = H / cr.height;
@@ -546,7 +571,7 @@ stage.addEventListener('dblclick', (e) => {
 });
 window.addEventListener('keydown', (e) => {
   if (e.target.closest('input, select, textarea')) return;
-  const d = derived(cam), step = 12 / cam.zoom;
+  const d = derived(cam), step = (e.shiftKey ? 120 : 40) / cam.zoom;      // hold Shift for big steps
   const pan = (a, b) => { cam.cx += d.cs * a - d.sn * b; cam.cy += d.sn * a + d.cs * b; };
   const k = e.key.toLowerCase();
   if (k === 'w' || k === 'arrowup') pan(0, -step);
