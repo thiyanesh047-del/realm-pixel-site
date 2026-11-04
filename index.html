@@ -3,128 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Realm Builder</title>
+<title>Realm Map</title>
+<meta name="description" content="The @realm.pixels world: one follower, one house. Find yours.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="map.css">
 </head>
-<body class="viewer">
-<aside id="panel">
-  <header>
-    <h1>realm.pixels <span>world viewer</span></h1>
-    <nav><a class="on" href="index.html">Viewer</a><a href="creatures.html">Creatures</a><a href="catalog.html">Catalog</a></nav>
-    <p id="meta" class="meta"></p>
-  </header>
+<body>
+<canvas id="map" aria-label="The realm.pixels world map: drag to move, scroll or pinch to zoom"></canvas>
 
-  <section id="game">
-    <h2>Build <small>(the game)</small></h2>
-    <div id="g-tools" class="tools" role="toolbar" aria-label="Tools"></div>
-    <label data-for="mine" class="inline">Pickaxe <input id="g-brush" type="range" min="1" max="6" step="1" value="1"> <span id="g-brush-n">1 block</span></label>
-    <div data-for="block" class="g-opts">
-      <label class="inline">Block size <select id="g-bsize"><option value="1">1 (world)</option><option value="0.5">0.5 (houses)</option><option value="0.25">0.25 (detail)</option></select></label>
-      <label class="inline">Colour <input id="g-color" type="color" value="#b4aa9a"></label>
-      <div id="g-swatches" class="swatches"></div>
-      <p class="meta">Alt-click a block to copy its colour.</p>
-    </div>
-    <div data-for="stamp" class="g-opts">
-      <select id="g-prefab" aria-label="What to stamp"></select>
-      <button id="g-rot" class="ghost">Turn (X) · 0°</button>
-    </div>
-    <p id="g-hover" class="meta"></p>
-    <div class="g-row"><button id="g-undo" class="ghost">Undo</button><button id="g-save">Save to world</button><button id="g-clear" class="ghost">Clear all</button></div>
-    <p id="g-status" class="meta"></p>
-    <p class="meta">Click to use the tool; drag still turns the camera. Keys 1–5 tools, X turn a stamp, [ ] pickaxe size, Ctrl+Z undo, Ctrl+S save.</p>
-  </section>
+<header id="bar">
+  <div class="brand">
+    <h1>realm.pixels</h1>
+    <p>1 follower = 1 house</p>
+  </div>
+  <form id="find" role="search">
+    <label for="q" class="vh">Find your house</label>
+    <input id="q" list="handles" placeholder="find your house: @handle" autocomplete="off" spellcheck="false">
+    <datalist id="handles"></datalist>
+    <button type="submit">Find</button>
+  </form>
+  <nav>
+    <a class="on" href="index.html">Map</a>
+    <a href="#hoard" id="open-hoard">The hoard</a>
+    <a href="catalog.html">Catalog</a>
+    <a href="voxel.html">3D (old)</a>
+  </nav>
+</header>
 
-  <section>
-    <h2>World</h2>
-    <select id="day" aria-label="Which day's world"></select>
-    <label class="inline">Light <select id="env" aria-label="Light"></select></label>
-    <p id="env-note" class="meta"></p>
-  </section>
-
-  <section>
-    <h2>Camera keys of the day</h2>
-    <select id="shots" aria-label="Camera keys"></select>
-    <button id="reset" class="ghost">Back to the last camera</button>
-  </section>
-
-  <section class="sliders">
-    <h2>Camera <small>(span.cam)</small></h2>
-    <label>orbit °<input id="s-orbit" type="range"><input id="n-orbit" type="number" step="1"></label>
-    <label>zoom<input id="s-zoom" type="range"><input id="n-zoom" type="number" step="0.05"></label>
-    <label>tilt °<input id="s-tilt" type="range"><input id="n-tilt" type="number" step="1"></label>
-    <label>centre x<input id="s-cx" type="range"><input id="n-cx" type="number" step="1"></label>
-    <label>centre y<input id="s-cy" type="range"><input id="n-cy" type="number" step="1"></label>
-    <label>focus<input id="s-fy" type="range"><input id="n-fy" type="number" step="0.01"></label>
-    <label>persp<input id="s-persp" type="range"><input id="n-persp" type="number" step="0.05"></label>
-  </section>
-
-  <section>
-    <h2>Key line for the day script's <code>KEYS</code></h2>
-    <div class="keyopts">
-      <label>t <input id="key-t" value="0.0" size="5"></label>
-      <label>easing <select id="key-ease"><option>sine</option><option>cubic</option><option>linear</option><option>None</option></select></label>
-    </div>
-    <textarea id="keyline" rows="2" readonly spellcheck="false"></textarea>
-    <button id="copy">Copy camera key</button>
-  </section>
-
-  <section class="motion">
-    <h2>Motion</h2>
-    <div class="mbtns">
-      <button class="mb" data-m="water">River &amp; falls</button>
-      <button class="mb" data-m="fire">Fire &amp; torches</button>
-      <button class="mb" data-m="sky">Clouds &amp; stars</button>
-      <button class="mb" data-m="dragon">Dragon flight</button>
-      <button class="mb" data-m="hunchback">Hunchback walk</button>
-      <button class="mb" data-m="black hole">Black hole</button>
-      <button class="mb" data-m="all">Everything</button>
-    </div>
-  </section>
-
-  <section class="toggles">
-    <h2>Show</h2>
-    <label><input id="t-vill" type="checkbox" checked> villager homes</label>
-    <label><input id="t-build" type="checkbox" checked> builds and wishes</label>
-    <label><input id="t-place" type="checkbox"> places</label>
-    <label><input id="t-safe" type="checkbox" checked> Instagram safe zones</label>
-    <label><input id="t-cover" type="checkbox"> cover crop 3:4</label>
-    <label><input id="t-outside" type="checkbox" checked> dim outside the 9:16 frame</label>
-    <label><input id="t-sharp" type="checkbox"> sharp (2× the reel's pixels)</label>
-  </section>
-
-  <section class="help">
-    <h2>Controls</h2>
-    <p>Drag: pan · right- or Ctrl-drag: orbit and tilt · wheel: zoom · touch: one finger pans, two fingers pinch to zoom, twist to orbit, slide up/down to tilt · double-click: centre on that ground · keys W A S D pan (Shift: faster), Q E orbit, R F tilt, + − zoom · click a label to centre on it.</p>
-    <p id="stat" class="meta"></p>
-  </section>
+<aside id="info">
+  <p class="stat"><b id="n-homes">-</b> homes <span class="sep">·</span> room for <b id="n-cap">-</b></p>
+  <p class="hint" id="found" aria-live="polite">Drag to look around. Scroll or pinch to zoom. Type your @ to find your house.</p>
+  <div class="row">
+    <button id="night" class="ghost" aria-pressed="false">Night</button>
+    <button id="go-castle" class="ghost">Castle</button>
+    <button id="go-struct" class="ghost">Structure</button>
+    <button id="zoom-in" class="ghost" aria-label="Zoom in">+</button>
+    <button id="zoom-out" class="ghost" aria-label="Zoom out">−</button>
+  </div>
 </aside>
 
-<main id="stage">
-  <canvas id="gl"></canvas>
-  <div id="overlay">
-    <div id="dim-l" class="dim"></div><div id="dim-r" class="dim"></div>
-    <div id="frame">
-      <div class="safe top"><span>Instagram header</span></div>
-      <div class="safe bottom"><span>caption, audio, buttons</span></div>
-      <div class="safe right"><span>like · comment · share</span></div>
-      <div class="cover"><span>profile grid 3:4</span></div>
-    </div>
+<div id="hoard" class="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="hoard-title">
+    <button class="close" id="close-hoard" aria-label="Close">×</button>
+    <h2 id="hoard-title">The hoard · Day 5</h2>
+    <p>Under the structure, on its gold, the crimson dragon breathes fire. Our paladin @just_t4te holds the sun shield in
+      the beam from the roof, and where the light falls the violet smoke burns off: it was never angry, it was under a spell.</p>
+    <img src="data2d/hoard.png" alt="Pixel art: a crimson dragon on heaps of gold breathes fire at a small paladin with a sun shield standing in a beam of light; villagers with lanterns behind him" width="1080" height="1920" loading="lazy">
   </div>
-  <button id="panel-toggle" title="Show or hide the panel">☰</button>
-  <div id="loading"><div class="box"><p id="load-text">Loading…</p><div class="track"><div id="load-bar"></div></div></div></div>
-</main>
-<script type="module" src="game.js"></script>
-<script>
-  window.addEventListener('error', (e) => {
-    const t = document.getElementById('load-text');
-    if (t) t.textContent = 'Could not start the viewer: ' + (e.message || e);
-  });
-  window.addEventListener('unhandledrejection', (e) => {
-    const t = document.getElementById('load-text');
-    if (t) t.textContent = 'Could not start the viewer: ' + (e.reason && e.reason.message || e.reason);
-  });
-</script>
+</div>
+
+<script src="map.js"></script>
 </body>
 </html>

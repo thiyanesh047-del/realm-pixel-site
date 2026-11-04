@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30T18:50:41",
+ "generated": "2026-11-03T22:54:06",
  "day": "fixes",
  "source": "fixes",
  "t": 20.0,
@@ -12,17 +12,17 @@
  "W": 540,
  "H": 960,
  "q": 64.0,
- "n_voxels": 2040427,
+ "n_voxels": 2050150,
  "parts": [
   {
    "name": "world",
    "offset": 0,
-   "count": 1704828
+   "count": 1627249
   },
   {
    "name": "scene",
-   "offset": 1704828,
-   "count": 335599
+   "offset": 1627249,
+   "count": 422901
   }
  ],
  "style": 1,
@@ -339,8 +339,8 @@
    "t": 12.001,
    "orbit": 20,
    "zoom": 3.4,
-   "cx": 371.88,
-   "cy": 434.27,
+   "cx": 371.46,
+   "cy": 434.68,
    "fy": 0.58,
    "ease": null,
    "tilt": 58,
@@ -351,8 +351,8 @@
    "t": 16.0,
    "orbit": 28,
    "zoom": 3.6,
-   "cx": 371.88,
-   "cy": 434.27,
+   "cx": 371.46,
+   "cy": 434.68,
    "fy": 0.58,
    "ease": "sine",
    "tilt": 58,
@@ -381,18 +381,6 @@
    "ease": "sine",
    "tilt": 60,
    "persp": 0.4
-  },
-  {
-   "label": "CANON \u00b7 Day 3 last camera",
-   "t": 0.0,
-   "orbit": 50.0,
-   "zoom": 1.6,
-   "tilt": 66.0,
-   "cx": 615.0,
-   "cy": 185.0,
-   "fy": 0.6,
-   "ease": "sine",
-   "persp": 1.0
   }
  ],
  "atlas": [

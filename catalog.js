@@ -6,7 +6,7 @@ const page = document.getElementById('page');
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const md = (s) => marked.parseInline(String(s ?? ''));
 const camLink = (cam, id) => cam
-  ? `<a class="go" href="index.html#cam=${[cam.orbit, cam.zoom, cam.tilt, cam.cx, cam.cy, cam.fy, cam.persp].join(',')}&sel=${encodeURIComponent(id)}">Open in viewer ↗</a>`
+  ? `<a class="go" href="voxel.html#cam=${[cam.orbit, cam.zoom, cam.tilt, cam.cx, cam.cy, cam.fy, cam.persp].join(',')}&sel=${encodeURIComponent(id)}">Open in viewer ↗</a>`
   : '<span class="pill">no spot in the world yet</span>';
 const rel = (p) => (p ? `C+(${fmtd(p[0] - 400)}, ${fmtd(p[1] - 400)})` : '');
 const fmtd = (v) => `${v < 0 ? '−' : ''}${Math.abs(Math.round(v * 10) / 10)}`;

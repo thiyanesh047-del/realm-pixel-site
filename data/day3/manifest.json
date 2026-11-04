@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30T18:48:53",
+ "generated": "2026-11-03T22:52:39",
  "day": 3,
  "source": "day3",
  "t": 38.0,
@@ -630,18 +630,6 @@
    "fy": 0.6,
    "ease": "cubic",
    "tilt": 66,
-   "persp": 1.0
-  },
-  {
-   "label": "CANON \u00b7 Day 3 last camera",
-   "t": 0.0,
-   "orbit": 50.0,
-   "zoom": 1.6,
-   "tilt": 66.0,
-   "cx": 615.0,
-   "cy": 185.0,
-   "fy": 0.6,
-   "ease": "sine",
    "persp": 1.0
   }
  ],
@@ -1653,6 +1641,17 @@
     384.0,
     346.0,
     18.0
+   ]
+  },
+  {
+   "id": "b-the-ringing-chamber-in-the-church-tower",
+   "kind": "build",
+   "text": "the ringing chamber in the church tower",
+   "sub": "core/builds10.py ringing_chamber, rope",
+   "pos": [
+    329.0,
+    239.0,
+    5.0
    ]
   },
   {

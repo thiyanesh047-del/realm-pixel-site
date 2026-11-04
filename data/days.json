@@ -4,7 +4,7 @@
    "n": 2,
    "title": "Day 2 \u2014 \"Something woke up\"",
    "t": 60.0,
-   "generated": "2026-10-30T18:48:36",
+   "generated": "2026-11-03T22:52:26",
    "voxels": 1906966,
    "final": true,
    "scene": false
@@ -13,7 +13,7 @@
    "n": 3,
    "title": "Day 3 \u2014 \"It moved\" (as rendered, 2026-10-30)",
    "t": 38.0,
-   "generated": "2026-10-30T18:48:53",
+   "generated": "2026-11-03T22:52:39",
    "voxels": 2044333,
    "final": true,
    "scene": false
@@ -22,16 +22,16 @@
    "n": 4,
    "title": "Day 3 \u00b7 Part 2 \u2014 \"The gold rumour\" (director's treatment, draft 1)",
    "t": 42.5,
-   "generated": "2026-10-30T18:49:13",
+   "generated": "2026-11-03T22:52:57",
    "voxels": 2067393,
-   "final": false,
+   "final": true,
    "scene": false
   },
   {
    "n": "hoard",
    "title": "The hoard hall (under the structure)",
    "t": 6.0,
-   "generated": "2026-10-30T18:50:24",
+   "generated": "2026-11-03T22:53:49",
    "voxels": 1564730,
    "final": false,
    "scene": true
@@ -40,8 +40,8 @@
    "n": "fixes",
    "title": "The fixes (Day 3's world with homes, roads and the bridge)",
    "t": 20.0,
-   "generated": "2026-10-30T18:50:41",
-   "voxels": 2040427,
+   "generated": "2026-11-03T22:54:06",
+   "voxels": 2050150,
    "final": false,
    "scene": true
   }

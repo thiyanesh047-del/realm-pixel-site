@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-30T18:50:24",
+ "generated": "2026-11-03T22:53:49",
  "day": "hoard",
  "source": "hoard",
  "t": 6.0,
@@ -280,18 +280,6 @@
    "ease": null,
    "tilt": 78.0,
    "persp": 0.8
-  },
-  {
-   "label": "CANON \u00b7 Day 3 last camera",
-   "t": 0.0,
-   "orbit": 50.0,
-   "zoom": 1.6,
-   "tilt": 66.0,
-   "cx": 615.0,
-   "cy": 185.0,
-   "fy": 0.6,
-   "ease": "sine",
-   "persp": 1.0
   }
  ],
  "atlas": [
