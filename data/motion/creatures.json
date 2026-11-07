@@ -1,1 +1,1305 @@
-{"record": 12, "creatures": [{"id": "dragon", "name": "The dragon", "day": 2, "who": "Wished by @liprontea; the HD scary dragon since Day 3.", "motions": [{"name": "perched", "fps": 1, "frames": [{"offset": 0, "count": 118952, "size": 0.3}]}, {"name": "fly", "fps": 24, "frames": [{"offset": 118952, "count": 118700, "size": 0.3}, {"offset": 237652, "count": 119317, "size": 0.3}, {"offset": 356969, "count": 118404, "size": 0.3}, {"offset": 475373, "count": 115998, "size": 0.3}, {"offset": 591371, "count": 113970, "size": 0.3}, {"offset": 705341, "count": 107919, "size": 0.3}, {"offset": 813260, "count": 97857, "size": 0.3}, {"offset": 911117, "count": 92849, "size": 0.3}, {"offset": 1003966, "count": 95104, "size": 0.3}, {"offset": 1099070, "count": 101759, "size": 0.3}, {"offset": 1200829, "count": 110548, "size": 0.3}, {"offset": 1311377, "count": 117497, "size": 0.3}]}]}, {"id": "vampire", "name": "The vampire", "day": 3, "who": "@gulalireng, only out at night.", "motions": [{"name": "cape", "fps": 8, "frames": [{"offset": 1428874, "count": 3431, "size": 0.22}, {"offset": 1432305, "count": 3494, "size": 0.22}, {"offset": 1435799, "count": 3571, "size": 0.22}, {"offset": 1439370, "count": 3494, "size": 0.22}, {"offset": 1442864, "count": 3431, "size": 0.22}, {"offset": 1446295, "count": 3367, "size": 0.22}, {"offset": 1449662, "count": 3286, "size": 0.22}, {"offset": 1452948, "count": 3367, "size": 0.22}]}]}, {"id": "bat", "name": "The bat", "day": 3, "who": "What @gulalireng turns into.", "motions": [{"name": "flap", "fps": 16, "frames": [{"offset": 1456315, "count": 547, "size": 0.18}, {"offset": 1456862, "count": 719, "size": 0.18}, {"offset": 1457581, "count": 731, "size": 0.18}, {"offset": 1458312, "count": 719, "size": 0.18}, {"offset": 1459031, "count": 547, "size": 0.18}, {"offset": 1459578, "count": 719, "size": 0.18}, {"offset": 1460297, "count": 710, "size": 0.18}, {"offset": 1461007, "count": 719, "size": 0.18}]}]}, {"id": "hunchback", "name": "The hunchback", "day": 3, "who": "@carlossgarciaah, says hi to everyone.", "motions": [{"name": "wave and walk", "fps": 8, "frames": [{"offset": 1461726, "count": 1785, "size": 0.22}, {"offset": 1463511, "count": 1765, "size": 0.22}, {"offset": 1465276, "count": 1776, "size": 0.22}, {"offset": 1467052, "count": 1765, "size": 0.22}, {"offset": 1468817, "count": 1785, "size": 0.22}, {"offset": 1470602, "count": 1782, "size": 0.22}, {"offset": 1472384, "count": 1764, "size": 0.22}, {"offset": 1474148, "count": 1782, "size": 0.22}]}]}, {"id": "knight", "name": "The knight", "day": 3, "who": "@just_t4te at the castle gate.", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1475930, "count": 1984, "size": 0.22}]}]}, {"id": "hooded", "name": "The hooded figure", "day": 3, "who": "Seen on the structure's tower. Who is it?", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1477914, "count": 1744, "size": 0.22}]}]}, {"id": "wizard", "name": "The wizard", "day": 4, "who": "@huntman225.", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1479658, "count": 2550, "size": 0.22}]}, {"name": "walk", "fps": 8, "frames": [{"offset": 1482208, "count": 2550, "size": 0.22}, {"offset": 1484758, "count": 2579, "size": 0.22}, {"offset": 1487337, "count": 2605, "size": 0.22}, {"offset": 1489942, "count": 2579, "size": 0.22}, {"offset": 1492521, "count": 2550, "size": 0.22}, {"offset": 1495071, "count": 2610, "size": 0.22}, {"offset": 1497681, "count": 2656, "size": 0.22}, {"offset": 1500337, "count": 2610, "size": 0.22}]}, {"name": "point", "fps": 1, "frames": [{"offset": 1502947, "count": 2583, "size": 0.22}]}]}, {"id": "alchemist", "name": "The alchemist", "day": 4, "who": "@dnshaqill, with a fat orange cat.", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1505530, "count": 1494, "size": 0.22}]}, {"name": "hold up the coin", "fps": 1, "frames": [{"offset": 1507024, "count": 1598, "size": 0.22}]}]}, {"id": "chef", "name": "The chef", "day": 4, "who": "@abdu.llah02058.", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1508622, "count": 1657, "size": 0.22}]}, {"name": "whisper", "fps": 1, "frames": [{"offset": 1510279, "count": 1607, "size": 0.22}]}, {"name": "drop the pan", "fps": 1, "frames": [{"offset": 1511886, "count": 1611, "size": 0.22}]}]}, {"id": "blacksmith", "name": "The blacksmith", "day": 4, "who": "@michi_gellrich.", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1513497, "count": 1516, "size": 0.22}]}, {"name": "run", "fps": 10, "frames": [{"offset": 1515013, "count": 1530, "size": 0.22}, {"offset": 1516543, "count": 1535, "size": 0.22}, {"offset": 1518078, "count": 1544, "size": 0.22}, {"offset": 1519622, "count": 1535, "size": 0.22}, {"offset": 1521157, "count": 1530, "size": 0.22}, {"offset": 1522687, "count": 1506, "size": 0.22}, {"offset": 1524193, "count": 1512, "size": 0.22}, {"offset": 1525705, "count": 1506, "size": 0.22}]}]}, {"id": "fisher", "name": "The fishers", "day": 4, "who": "@hudsonryder_ and @maloyowen.", "motions": [{"name": "lantern", "fps": 1, "frames": [{"offset": 1527211, "count": 1712, "size": 0.22}]}, {"name": "wave", "fps": 8, "frames": [{"offset": 1528923, "count": 1631, "size": 0.22}, {"offset": 1530554, "count": 1636, "size": 0.22}, {"offset": 1532190, "count": 1637, "size": 0.22}, {"offset": 1533827, "count": 1636, "size": 0.22}, {"offset": 1535463, "count": 1631, "size": 0.22}, {"offset": 1537094, "count": 1627, "size": 0.22}, {"offset": 1538721, "count": 1624, "size": 0.22}, {"offset": 1540345, "count": 1627, "size": 0.22}]}]}, {"id": "realm", "name": "@realm.pixels", "day": 4, "who": "Villager #1, the channel itself, by the fire.", "motions": [{"name": "sit", "fps": 1, "frames": [{"offset": 1541972, "count": 1405, "size": 0.22}]}, {"name": "shrug", "fps": 1, "frames": [{"offset": 1543377, "count": 1433, "size": 0.22}]}]}, {"id": "sheepdog", "name": "The sheepdog", "day": 4, "who": "Guards the farm.", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1544810, "count": 462, "size": 0.22}]}, {"name": "trot", "fps": 10, "frames": [{"offset": 1545272, "count": 462, "size": 0.22}, {"offset": 1545734, "count": 470, "size": 0.22}, {"offset": 1546204, "count": 470, "size": 0.22}, {"offset": 1546674, "count": 470, "size": 0.22}, {"offset": 1547144, "count": 462, "size": 0.22}, {"offset": 1547606, "count": 470, "size": 0.22}, {"offset": 1548076, "count": 471, "size": 0.22}, {"offset": 1548547, "count": 470, "size": 0.22}]}, {"name": "sit", "fps": 6, "frames": [{"offset": 1549017, "count": 493, "size": 0.22}, {"offset": 1549510, "count": 493, "size": 0.22}, {"offset": 1550003, "count": 493, "size": 0.22}, {"offset": 1550496, "count": 497, "size": 0.22}, {"offset": 1550993, "count": 493, "size": 0.22}, {"offset": 1551486, "count": 493, "size": 0.22}, {"offset": 1551979, "count": 493, "size": 0.22}, {"offset": 1552472, "count": 497, "size": 0.22}]}, {"name": "bark", "fps": 4, "frames": [{"offset": 1552969, "count": 496, "size": 0.22}, {"offset": 1553465, "count": 462, "size": 0.22}]}, {"name": "sniff", "fps": 1, "frames": [{"offset": 1553927, "count": 470, "size": 0.22}]}, {"name": "point", "fps": 1, "frames": [{"offset": 1554397, "count": 470, "size": 0.22}]}, {"name": "growl", "fps": 1, "frames": [{"offset": 1554867, "count": 428, "size": 0.22}]}]}, {"id": "golden", "name": "The golden dog", "day": 4, "who": "Guards the farm.", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1555295, "count": 462, "size": 0.22}]}, {"name": "trot", "fps": 10, "frames": [{"offset": 1555757, "count": 462, "size": 0.22}, {"offset": 1556219, "count": 470, "size": 0.22}, {"offset": 1556689, "count": 470, "size": 0.22}, {"offset": 1557159, "count": 470, "size": 0.22}, {"offset": 1557629, "count": 462, "size": 0.22}, {"offset": 1558091, "count": 470, "size": 0.22}, {"offset": 1558561, "count": 471, "size": 0.22}, {"offset": 1559032, "count": 470, "size": 0.22}]}, {"name": "sit", "fps": 6, "frames": [{"offset": 1559502, "count": 493, "size": 0.22}, {"offset": 1559995, "count": 493, "size": 0.22}, {"offset": 1560488, "count": 493, "size": 0.22}, {"offset": 1560981, "count": 497, "size": 0.22}, {"offset": 1561478, "count": 493, "size": 0.22}, {"offset": 1561971, "count": 493, "size": 0.22}, {"offset": 1562464, "count": 493, "size": 0.22}, {"offset": 1562957, "count": 497, "size": 0.22}]}, {"name": "bark", "fps": 4, "frames": [{"offset": 1563454, "count": 496, "size": 0.22}, {"offset": 1563950, "count": 462, "size": 0.22}]}, {"name": "sniff", "fps": 1, "frames": [{"offset": 1564412, "count": 470, "size": 0.22}]}, {"name": "growl", "fps": 1, "frames": [{"offset": 1564882, "count": 428, "size": 0.22}]}]}, {"id": "cat", "name": "The fat orange cat", "day": 4, "who": "The alchemist's.", "motions": [{"name": "sit", "fps": 1, "frames": [{"offset": 1565310, "count": 653, "size": 0.18}]}, {"name": "waddle", "fps": 8, "frames": [{"offset": 1565963, "count": 653, "size": 0.18}, {"offset": 1566616, "count": 652, "size": 0.18}, {"offset": 1567268, "count": 653, "size": 0.18}, {"offset": 1567921, "count": 652, "size": 0.18}, {"offset": 1568573, "count": 653, "size": 0.18}, {"offset": 1569226, "count": 651, "size": 0.18}, {"offset": 1569877, "count": 655, "size": 0.18}, {"offset": 1570532, "count": 651, "size": 0.18}]}, {"name": "stuck in the hatch", "fps": 8, "frames": [{"offset": 1571183, "count": 552, "size": 0.18}, {"offset": 1571735, "count": 551, "size": 0.18}, {"offset": 1572286, "count": 552, "size": 0.18}, {"offset": 1572838, "count": 551, "size": 0.18}, {"offset": 1573389, "count": 552, "size": 0.18}, {"offset": 1573941, "count": 550, "size": 0.18}, {"offset": 1574491, "count": 554, "size": 0.18}, {"offset": 1575045, "count": 550, "size": 0.18}]}, {"name": "yawn", "fps": 2, "frames": [{"offset": 1575595, "count": 653, "size": 0.18}, {"offset": 1576248, "count": 654, "size": 0.18}]}, {"name": "paw", "fps": 4, "frames": [{"offset": 1576902, "count": 648, "size": 0.18}, {"offset": 1577550, "count": 653, "size": 0.18}]}, {"name": "hiss", "fps": 1, "frames": [{"offset": 1578203, "count": 837, "size": 0.18}]}]}, {"id": "horse", "name": "The horse", "day": 4, "who": "Lives in the stable by the tent.", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1579040, "count": 1387, "size": 0.22}]}, {"name": "trot", "fps": 10, "frames": [{"offset": 1580427, "count": 1387, "size": 0.22}, {"offset": 1581814, "count": 1385, "size": 0.22}, {"offset": 1583199, "count": 1392, "size": 0.22}, {"offset": 1584591, "count": 1385, "size": 0.22}, {"offset": 1585976, "count": 1387, "size": 0.22}, {"offset": 1587363, "count": 1388, "size": 0.22}, {"offset": 1588751, "count": 1390, "size": 0.22}, {"offset": 1590141, "count": 1388, "size": 0.22}]}, {"name": "neigh", "fps": 1, "frames": [{"offset": 1591529, "count": 1438, "size": 0.22}]}]}, {"id": "foal", "name": "The foal", "day": 4, "who": "Follows the horse.", "motions": [{"name": "stand", "fps": 1, "frames": [{"offset": 1592967, "count": 1387, "size": 0.154}]}, {"name": "trot", "fps": 10, "frames": [{"offset": 1594354, "count": 1387, "size": 0.154}, {"offset": 1595741, "count": 1385, "size": 0.154}, {"offset": 1597126, "count": 1392, "size": 0.154}, {"offset": 1598518, "count": 1385, "size": 0.154}, {"offset": 1599903, "count": 1387, "size": 0.154}, {"offset": 1601290, "count": 1388, "size": 0.154}, {"offset": 1602678, "count": 1390, "size": 0.154}, {"offset": 1604068, "count": 1388, "size": 0.154}]}]}, {"id": "cow", "name": "The cows", "day": 4, "who": "On the farm.", "motions": [{"name": "graze", "fps": 2, "frames": [{"offset": 1605456, "count": 1142, "size": 0.22}, {"offset": 1606598, "count": 1154, "size": 0.22}]}, {"name": "brown cow", "fps": 2, "frames": [{"offset": 1607752, "count": 1142, "size": 0.22}, {"offset": 1608894, "count": 1154, "size": 0.22}]}]}, {"id": "sheep", "name": "The sheep", "day": 4, "who": "On the farm.", "motions": [{"name": "graze", "fps": 2, "frames": [{"offset": 1610048, "count": 630, "size": 0.22}, {"offset": 1610678, "count": 646, "size": 0.22}]}]}, {"id": "chicken", "name": "The chickens", "day": 4, "who": "Round the coop.", "motions": [{"name": "peck", "fps": 4, "frames": [{"offset": 1611324, "count": 150, "size": 0.15}, {"offset": 1611474, "count": 134, "size": 0.15}]}, {"name": "rooster", "fps": 4, "frames": [{"offset": 1611608, "count": 162, "size": 0.15}, {"offset": 1611770, "count": 146, "size": 0.15}]}]}]}
+{
+ "record": 12,
+ "creatures": [
+  {
+   "id": "dragon",
+   "name": "The dragon",
+   "day": 2,
+   "who": "Wished by @liprontea; the HD scary dragon since Day 3.",
+   "motions": [
+    {
+     "name": "perched",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 0,
+       "count": 118952,
+       "size": 0.3
+      }
+     ]
+    },
+    {
+     "name": "fly",
+     "fps": 24,
+     "frames": [
+      {
+       "offset": 118952,
+       "count": 118700,
+       "size": 0.3
+      },
+      {
+       "offset": 237652,
+       "count": 119317,
+       "size": 0.3
+      },
+      {
+       "offset": 356969,
+       "count": 118404,
+       "size": 0.3
+      },
+      {
+       "offset": 475373,
+       "count": 115998,
+       "size": 0.3
+      },
+      {
+       "offset": 591371,
+       "count": 113970,
+       "size": 0.3
+      },
+      {
+       "offset": 705341,
+       "count": 107919,
+       "size": 0.3
+      },
+      {
+       "offset": 813260,
+       "count": 97857,
+       "size": 0.3
+      },
+      {
+       "offset": 911117,
+       "count": 92849,
+       "size": 0.3
+      },
+      {
+       "offset": 1003966,
+       "count": 95104,
+       "size": 0.3
+      },
+      {
+       "offset": 1099070,
+       "count": 101759,
+       "size": 0.3
+      },
+      {
+       "offset": 1200829,
+       "count": 110548,
+       "size": 0.3
+      },
+      {
+       "offset": 1311377,
+       "count": 117497,
+       "size": 0.3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vampire",
+   "name": "The vampire",
+   "day": 3,
+   "who": "@gulalireng, only out at night.",
+   "motions": [
+    {
+     "name": "cape",
+     "fps": 8,
+     "frames": [
+      {
+       "offset": 1428874,
+       "count": 3431,
+       "size": 0.22
+      },
+      {
+       "offset": 1432305,
+       "count": 3494,
+       "size": 0.22
+      },
+      {
+       "offset": 1435799,
+       "count": 3571,
+       "size": 0.22
+      },
+      {
+       "offset": 1439370,
+       "count": 3494,
+       "size": 0.22
+      },
+      {
+       "offset": 1442864,
+       "count": 3431,
+       "size": 0.22
+      },
+      {
+       "offset": 1446295,
+       "count": 3367,
+       "size": 0.22
+      },
+      {
+       "offset": 1449662,
+       "count": 3286,
+       "size": 0.22
+      },
+      {
+       "offset": 1452948,
+       "count": 3367,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bat",
+   "name": "The bat",
+   "day": 3,
+   "who": "What @gulalireng turns into.",
+   "motions": [
+    {
+     "name": "flap",
+     "fps": 16,
+     "frames": [
+      {
+       "offset": 1456315,
+       "count": 547,
+       "size": 0.18
+      },
+      {
+       "offset": 1456862,
+       "count": 719,
+       "size": 0.18
+      },
+      {
+       "offset": 1457581,
+       "count": 731,
+       "size": 0.18
+      },
+      {
+       "offset": 1458312,
+       "count": 719,
+       "size": 0.18
+      },
+      {
+       "offset": 1459031,
+       "count": 547,
+       "size": 0.18
+      },
+      {
+       "offset": 1459578,
+       "count": 719,
+       "size": 0.18
+      },
+      {
+       "offset": 1460297,
+       "count": 710,
+       "size": 0.18
+      },
+      {
+       "offset": 1461007,
+       "count": 719,
+       "size": 0.18
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hunchback",
+   "name": "The hunchback",
+   "day": 3,
+   "who": "@carlossgarciaah, says hi to everyone.",
+   "motions": [
+    {
+     "name": "wave and walk",
+     "fps": 8,
+     "frames": [
+      {
+       "offset": 1461726,
+       "count": 1785,
+       "size": 0.22
+      },
+      {
+       "offset": 1463511,
+       "count": 1765,
+       "size": 0.22
+      },
+      {
+       "offset": 1465276,
+       "count": 1776,
+       "size": 0.22
+      },
+      {
+       "offset": 1467052,
+       "count": 1765,
+       "size": 0.22
+      },
+      {
+       "offset": 1468817,
+       "count": 1785,
+       "size": 0.22
+      },
+      {
+       "offset": 1470602,
+       "count": 1782,
+       "size": 0.22
+      },
+      {
+       "offset": 1472384,
+       "count": 1764,
+       "size": 0.22
+      },
+      {
+       "offset": 1474148,
+       "count": 1782,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "knight",
+   "name": "The knight",
+   "day": 3,
+   "who": "@just_t4te at the castle gate.",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1475930,
+       "count": 1984,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hooded",
+   "name": "The hooded figure",
+   "day": 3,
+   "who": "Seen on the structure's tower. Who is it?",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1477914,
+       "count": 1744,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wizard",
+   "name": "The wizard",
+   "day": 4,
+   "who": "@huntman225.",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1479658,
+       "count": 2550,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "walk",
+     "fps": 8,
+     "frames": [
+      {
+       "offset": 1482208,
+       "count": 2550,
+       "size": 0.22
+      },
+      {
+       "offset": 1484758,
+       "count": 2579,
+       "size": 0.22
+      },
+      {
+       "offset": 1487337,
+       "count": 2605,
+       "size": 0.22
+      },
+      {
+       "offset": 1489942,
+       "count": 2579,
+       "size": 0.22
+      },
+      {
+       "offset": 1492521,
+       "count": 2550,
+       "size": 0.22
+      },
+      {
+       "offset": 1495071,
+       "count": 2610,
+       "size": 0.22
+      },
+      {
+       "offset": 1497681,
+       "count": 2656,
+       "size": 0.22
+      },
+      {
+       "offset": 1500337,
+       "count": 2610,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "point",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1502947,
+       "count": 2583,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alchemist",
+   "name": "The alchemist",
+   "day": 4,
+   "who": "@dnshaqill, with a fat orange cat.",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1505530,
+       "count": 1494,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "hold up the coin",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1507024,
+       "count": 1598,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chef",
+   "name": "The chef",
+   "day": 4,
+   "who": "@abdu.llah02058.",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1508622,
+       "count": 1657,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "whisper",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1510279,
+       "count": 1607,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "drop the pan",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1511886,
+       "count": 1611,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "blacksmith",
+   "name": "The blacksmith",
+   "day": 4,
+   "who": "@michi_gellrich.",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1513497,
+       "count": 1516,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "run",
+     "fps": 10,
+     "frames": [
+      {
+       "offset": 1515013,
+       "count": 1530,
+       "size": 0.22
+      },
+      {
+       "offset": 1516543,
+       "count": 1535,
+       "size": 0.22
+      },
+      {
+       "offset": 1518078,
+       "count": 1544,
+       "size": 0.22
+      },
+      {
+       "offset": 1519622,
+       "count": 1535,
+       "size": 0.22
+      },
+      {
+       "offset": 1521157,
+       "count": 1530,
+       "size": 0.22
+      },
+      {
+       "offset": 1522687,
+       "count": 1506,
+       "size": 0.22
+      },
+      {
+       "offset": 1524193,
+       "count": 1512,
+       "size": 0.22
+      },
+      {
+       "offset": 1525705,
+       "count": 1506,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fisher",
+   "name": "The fishers",
+   "day": 4,
+   "who": "@hudsonryder_ and @maloyowen.",
+   "motions": [
+    {
+     "name": "lantern",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1527211,
+       "count": 1712,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "wave",
+     "fps": 8,
+     "frames": [
+      {
+       "offset": 1528923,
+       "count": 1631,
+       "size": 0.22
+      },
+      {
+       "offset": 1530554,
+       "count": 1636,
+       "size": 0.22
+      },
+      {
+       "offset": 1532190,
+       "count": 1637,
+       "size": 0.22
+      },
+      {
+       "offset": 1533827,
+       "count": 1636,
+       "size": 0.22
+      },
+      {
+       "offset": 1535463,
+       "count": 1631,
+       "size": 0.22
+      },
+      {
+       "offset": 1537094,
+       "count": 1627,
+       "size": 0.22
+      },
+      {
+       "offset": 1538721,
+       "count": 1624,
+       "size": 0.22
+      },
+      {
+       "offset": 1540345,
+       "count": 1627,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "realm",
+   "name": "@realm.pixels",
+   "day": 4,
+   "who": "Villager #1, the channel itself, by the fire.",
+   "motions": [
+    {
+     "name": "sit",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1541972,
+       "count": 1405,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "shrug",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1543377,
+       "count": 1433,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sheepdog",
+   "name": "The sheepdog",
+   "day": 4,
+   "who": "Guards the farm.",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1544810,
+       "count": 462,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "trot",
+     "fps": 10,
+     "frames": [
+      {
+       "offset": 1545272,
+       "count": 462,
+       "size": 0.22
+      },
+      {
+       "offset": 1545734,
+       "count": 470,
+       "size": 0.22
+      },
+      {
+       "offset": 1546204,
+       "count": 470,
+       "size": 0.22
+      },
+      {
+       "offset": 1546674,
+       "count": 470,
+       "size": 0.22
+      },
+      {
+       "offset": 1547144,
+       "count": 462,
+       "size": 0.22
+      },
+      {
+       "offset": 1547606,
+       "count": 470,
+       "size": 0.22
+      },
+      {
+       "offset": 1548076,
+       "count": 471,
+       "size": 0.22
+      },
+      {
+       "offset": 1548547,
+       "count": 470,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "sit",
+     "fps": 6,
+     "frames": [
+      {
+       "offset": 1549017,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1549510,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1550003,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1550496,
+       "count": 497,
+       "size": 0.22
+      },
+      {
+       "offset": 1550993,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1551486,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1551979,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1552472,
+       "count": 497,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "bark",
+     "fps": 4,
+     "frames": [
+      {
+       "offset": 1552969,
+       "count": 496,
+       "size": 0.22
+      },
+      {
+       "offset": 1553465,
+       "count": 462,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "sniff",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1553927,
+       "count": 470,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "point",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1554397,
+       "count": 470,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "growl",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1554867,
+       "count": 428,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "golden",
+   "name": "The golden dog",
+   "day": 4,
+   "who": "Guards the farm.",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1555295,
+       "count": 462,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "trot",
+     "fps": 10,
+     "frames": [
+      {
+       "offset": 1555757,
+       "count": 462,
+       "size": 0.22
+      },
+      {
+       "offset": 1556219,
+       "count": 470,
+       "size": 0.22
+      },
+      {
+       "offset": 1556689,
+       "count": 470,
+       "size": 0.22
+      },
+      {
+       "offset": 1557159,
+       "count": 470,
+       "size": 0.22
+      },
+      {
+       "offset": 1557629,
+       "count": 462,
+       "size": 0.22
+      },
+      {
+       "offset": 1558091,
+       "count": 470,
+       "size": 0.22
+      },
+      {
+       "offset": 1558561,
+       "count": 471,
+       "size": 0.22
+      },
+      {
+       "offset": 1559032,
+       "count": 470,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "sit",
+     "fps": 6,
+     "frames": [
+      {
+       "offset": 1559502,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1559995,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1560488,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1560981,
+       "count": 497,
+       "size": 0.22
+      },
+      {
+       "offset": 1561478,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1561971,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1562464,
+       "count": 493,
+       "size": 0.22
+      },
+      {
+       "offset": 1562957,
+       "count": 497,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "bark",
+     "fps": 4,
+     "frames": [
+      {
+       "offset": 1563454,
+       "count": 496,
+       "size": 0.22
+      },
+      {
+       "offset": 1563950,
+       "count": 462,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "sniff",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1564412,
+       "count": 470,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "growl",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1564882,
+       "count": 428,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cat",
+   "name": "The fat orange cat",
+   "day": 4,
+   "who": "The alchemist's.",
+   "motions": [
+    {
+     "name": "sit",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1565310,
+       "count": 653,
+       "size": 0.18
+      }
+     ]
+    },
+    {
+     "name": "waddle",
+     "fps": 8,
+     "frames": [
+      {
+       "offset": 1565963,
+       "count": 653,
+       "size": 0.18
+      },
+      {
+       "offset": 1566616,
+       "count": 652,
+       "size": 0.18
+      },
+      {
+       "offset": 1567268,
+       "count": 653,
+       "size": 0.18
+      },
+      {
+       "offset": 1567921,
+       "count": 652,
+       "size": 0.18
+      },
+      {
+       "offset": 1568573,
+       "count": 653,
+       "size": 0.18
+      },
+      {
+       "offset": 1569226,
+       "count": 651,
+       "size": 0.18
+      },
+      {
+       "offset": 1569877,
+       "count": 655,
+       "size": 0.18
+      },
+      {
+       "offset": 1570532,
+       "count": 651,
+       "size": 0.18
+      }
+     ]
+    },
+    {
+     "name": "stuck in the hatch",
+     "fps": 8,
+     "frames": [
+      {
+       "offset": 1571183,
+       "count": 552,
+       "size": 0.18
+      },
+      {
+       "offset": 1571735,
+       "count": 551,
+       "size": 0.18
+      },
+      {
+       "offset": 1572286,
+       "count": 552,
+       "size": 0.18
+      },
+      {
+       "offset": 1572838,
+       "count": 551,
+       "size": 0.18
+      },
+      {
+       "offset": 1573389,
+       "count": 552,
+       "size": 0.18
+      },
+      {
+       "offset": 1573941,
+       "count": 550,
+       "size": 0.18
+      },
+      {
+       "offset": 1574491,
+       "count": 554,
+       "size": 0.18
+      },
+      {
+       "offset": 1575045,
+       "count": 550,
+       "size": 0.18
+      }
+     ]
+    },
+    {
+     "name": "yawn",
+     "fps": 2,
+     "frames": [
+      {
+       "offset": 1575595,
+       "count": 653,
+       "size": 0.18
+      },
+      {
+       "offset": 1576248,
+       "count": 654,
+       "size": 0.18
+      }
+     ]
+    },
+    {
+     "name": "paw",
+     "fps": 4,
+     "frames": [
+      {
+       "offset": 1576902,
+       "count": 648,
+       "size": 0.18
+      },
+      {
+       "offset": 1577550,
+       "count": 653,
+       "size": 0.18
+      }
+     ]
+    },
+    {
+     "name": "hiss",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1578203,
+       "count": 837,
+       "size": 0.18
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "horse",
+   "name": "The horse",
+   "day": 4,
+   "who": "Lives in the stable by the tent.",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1579040,
+       "count": 1387,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "trot",
+     "fps": 10,
+     "frames": [
+      {
+       "offset": 1580427,
+       "count": 1387,
+       "size": 0.22
+      },
+      {
+       "offset": 1581814,
+       "count": 1385,
+       "size": 0.22
+      },
+      {
+       "offset": 1583199,
+       "count": 1392,
+       "size": 0.22
+      },
+      {
+       "offset": 1584591,
+       "count": 1385,
+       "size": 0.22
+      },
+      {
+       "offset": 1585976,
+       "count": 1387,
+       "size": 0.22
+      },
+      {
+       "offset": 1587363,
+       "count": 1388,
+       "size": 0.22
+      },
+      {
+       "offset": 1588751,
+       "count": 1390,
+       "size": 0.22
+      },
+      {
+       "offset": 1590141,
+       "count": 1388,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "neigh",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1591529,
+       "count": 1438,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "foal",
+   "name": "The foal",
+   "day": 4,
+   "who": "Follows the horse.",
+   "motions": [
+    {
+     "name": "stand",
+     "fps": 1,
+     "frames": [
+      {
+       "offset": 1592967,
+       "count": 1387,
+       "size": 0.154
+      }
+     ]
+    },
+    {
+     "name": "trot",
+     "fps": 10,
+     "frames": [
+      {
+       "offset": 1594354,
+       "count": 1387,
+       "size": 0.154
+      },
+      {
+       "offset": 1595741,
+       "count": 1385,
+       "size": 0.154
+      },
+      {
+       "offset": 1597126,
+       "count": 1392,
+       "size": 0.154
+      },
+      {
+       "offset": 1598518,
+       "count": 1385,
+       "size": 0.154
+      },
+      {
+       "offset": 1599903,
+       "count": 1387,
+       "size": 0.154
+      },
+      {
+       "offset": 1601290,
+       "count": 1388,
+       "size": 0.154
+      },
+      {
+       "offset": 1602678,
+       "count": 1390,
+       "size": 0.154
+      },
+      {
+       "offset": 1604068,
+       "count": 1388,
+       "size": 0.154
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cow",
+   "name": "The cows",
+   "day": 4,
+   "who": "On the farm.",
+   "motions": [
+    {
+     "name": "graze",
+     "fps": 2,
+     "frames": [
+      {
+       "offset": 1605456,
+       "count": 1142,
+       "size": 0.22
+      },
+      {
+       "offset": 1606598,
+       "count": 1154,
+       "size": 0.22
+      }
+     ]
+    },
+    {
+     "name": "brown cow",
+     "fps": 2,
+     "frames": [
+      {
+       "offset": 1607752,
+       "count": 1142,
+       "size": 0.22
+      },
+      {
+       "offset": 1608894,
+       "count": 1154,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sheep",
+   "name": "The sheep",
+   "day": 4,
+   "who": "On the farm.",
+   "motions": [
+    {
+     "name": "graze",
+     "fps": 2,
+     "frames": [
+      {
+       "offset": 1610048,
+       "count": 630,
+       "size": 0.22
+      },
+      {
+       "offset": 1610678,
+       "count": 646,
+       "size": 0.22
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chicken",
+   "name": "The chickens",
+   "day": 4,
+   "who": "Round the coop.",
+   "motions": [
+    {
+     "name": "peck",
+     "fps": 4,
+     "frames": [
+      {
+       "offset": 1611324,
+       "count": 150,
+       "size": 0.15
+      },
+      {
+       "offset": 1611474,
+       "count": 134,
+       "size": 0.15
+      }
+     ]
+    },
+    {
+     "name": "rooster",
+     "fps": 4,
+     "frames": [
+      {
+       "offset": 1611608,
+       "count": 162,
+       "size": 0.15
+      },
+      {
+       "offset": 1611770,
+       "count": 146,
+       "size": 0.15
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

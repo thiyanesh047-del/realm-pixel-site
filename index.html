@@ -3,57 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Realm Map</title>
-<meta name="description" content="The @realm.pixels world: one follower, one house. Find yours.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="map.css">
+<title>Realm in 3D</title>
+<meta name="description" content="The @realm.pixels world in 3D sprites: one follower, one house.">
+<meta http-equiv="refresh" content="0; url=city.html">
+<link rel="canonical" href="city.html">
+<style>
+  :root { --bg: #16141c; --fg: #e8e2d6; --link: #e8b85a; }
+  body { background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, sans-serif; margin: 0; padding: 24px 16px; }
+  a { color: var(--link); }
+</style>
 </head>
 <body>
-<canvas id="map" aria-label="The realm.pixels world map: drag to move, scroll or pinch to zoom"></canvas>
-
-<header id="bar">
-  <div class="brand">
-    <h1>realm.pixels</h1>
-    <p>1 follower = 1 house</p>
-  </div>
-  <form id="find" role="search">
-    <label for="q" class="vh">Find your house</label>
-    <input id="q" list="handles" placeholder="find your house: @handle" autocomplete="off" spellcheck="false">
-    <datalist id="handles"></datalist>
-    <button type="submit">Find</button>
-  </form>
-  <nav>
-    <a class="on" href="index.html">Map</a>
-    <a href="city.html">3D world</a>
-    <a href="#hoard" id="open-hoard">The hoard</a>
-    <a href="catalog.html">Catalog</a>
-    <a href="voxel.html">3D (old)</a>
-  </nav>
-</header>
-
-<aside id="info">
-  <p class="stat"><b id="n-homes">-</b> homes <span class="sep">·</span> room for <b id="n-cap">-</b></p>
-  <p class="hint" id="found" aria-live="polite">Drag to look around. Scroll or pinch to zoom. Type your @ to find your house.</p>
-  <div class="row">
-    <button id="night" class="ghost" aria-pressed="false">Night</button>
-    <button id="go-castle" class="ghost">Castle</button>
-    <button id="go-struct" class="ghost">Structure</button>
-    <button id="zoom-in" class="ghost" aria-label="Zoom in">+</button>
-    <button id="zoom-out" class="ghost" aria-label="Zoom out">−</button>
-  </div>
-</aside>
-
-<div id="hoard" class="modal" hidden>
-  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="hoard-title">
-    <button class="close" id="close-hoard" aria-label="Close">×</button>
-    <h2 id="hoard-title">The hoard · Day 5</h2>
-    <p>Under the structure, on its gold, the crimson dragon breathes fire. Our paladin @just_t4te holds the sun shield in
-      the beam from the roof, and where the light falls the violet smoke burns off: it was never angry, it was under a spell.</p>
-    <img src="data2d/hoard_sprite.png" alt="Pixel art: a black dragon with tan belly plates rears on heaps of gold in a dark hall and breathes fire at a small hooded figure standing in a shaft of light" width="1080" height="1920" loading="lazy">
-  </div>
-</div>
-
-<script src="map.js"></script>
+<p>The realm.pixels world is in 3D sprites now: <a href="city.html">open the world</a>.</p>
 </body>
 </html>
